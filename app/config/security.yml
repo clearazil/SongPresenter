@@ -26,8 +26,10 @@ security:
             provider: db_provider
             logout:
                 path: logout
-                
+
     encoders:
         AppBundle\Entity\User:
             algorithm: bcrypt
             cost: 12
+    acl:
+        connection: default
