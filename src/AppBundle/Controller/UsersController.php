@@ -4,11 +4,8 @@ namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
+use AppBundle\Form\Type\UserType;
 use AppBundle\Entity\User;
 
 class UsersController extends Controller
@@ -28,18 +25,7 @@ class UsersController extends Controller
     {
         $user = new User();
 
-        $form = $this->createFormBuilder($user)
-            ->setMethod('POST')
-            ->add('username', TextType::class)
-            ->add('password', RepeatedType::class, [
-                'type' => PasswordType::class,
-                'invalid_message' => 'The password fields must match.',
-                'first_options' => ['label' => 'Password'],
-                'second_options' => ['label' => 'Repeat Password'],
-            ])
-            ->add('email', TextType::class)
-            ->add('create', SubmitType::class, ['label' => 'Create'])
-            ->getForm();
+        $form = $this->createForm(UserType::class, $user);
 
         $form->handleRequest($request);
 
@@ -66,18 +52,7 @@ class UsersController extends Controller
         $user = $em->getRepository('AppBundle:User')
             ->find($id);
 
-        $form = $this->createFormBuilder($user)
-            ->setMethod('POST')
-            ->add('username', TextType::class)
-            ->add('password', RepeatedType::class, [
-                'type' => PasswordType::class,
-                'invalid_message' => 'The password fields must match.',
-                'first_options' => ['label' => 'Password'],
-                'second_options' => ['label' => 'Repeat Password'],
-            ])
-            ->add('email', TextType::class)
-            ->add('update', SubmitType::class, ['label' => 'Update'])
-            ->getForm();
+        $form = $this->createForm(UserType::class, $user);
 
         $form->handleRequest($request);
 
