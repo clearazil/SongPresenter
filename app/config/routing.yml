@@ -15,4 +15,10 @@ users_create:
 users_edit:
     path:     /users/edit/{id}
     defaults: { _controller: AppBundle:Users:edit }
+songs_create:
+    path:     /songs/create
+    defaults: { _controller: AppBundle:Songs:create }
+songs_edit:
+    path:     /songs/edit/{id}
+    defaults: { _controller: AppBundle:Songs:edit }
 

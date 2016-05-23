@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity
@@ -35,12 +36,14 @@ class SongVerse
     private $refrain;
 
     /**
+     * @Assert\NotBlank()
      * @ORM\Column(type="integer")
      * @var [type]
      */
     private $verse_no;
 
     /**
+     * @Assert\NotBlank()
      * @ORM\Column(type="text")
      * @var [type]
      */
@@ -128,6 +131,13 @@ class SongVerse
     public function getVerse()
     {
         return $this->verse;
+    }
+
+    public function addSong(Song $song)
+    {
+        $this->setSong($song);
+
+        return $this;
     }
 
     /**

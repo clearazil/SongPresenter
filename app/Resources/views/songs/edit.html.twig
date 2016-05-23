@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+
+    {{ form_errors(form) }}
+
+    {{ form_row(form.song_group) }}
+    {{ form_row(form.title) }}
+    {{ form_row(form.song_no) }}
+    {{ form_row(form.lang) }}
+
+    <div class="verses" data-prototype="{{ form_widget(form.verses.vars.prototype)|e }}">
+        {% for verse in form.verses %}
+            {% set i = i + 1 %}
+            {{ form_row(verse.verse, { 'label': 'Verse ' ~ i}) }}
+        {% endfor %}
+    </div>
+    
+    {{ form_row(form.submit, { 'label': 'Update' }) }}
+
+    {{ form_end(form) }}
+{% endblock %}

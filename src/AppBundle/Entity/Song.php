@@ -4,9 +4,11 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity
+ * @UniqueEntity({"song_no", "song_group"})
  * @ORM\HasLifecycleCallbacks()
  * @ORM\Table(name="songs")
  */
@@ -21,6 +23,7 @@ class Song
     private $id;
 
     /**
+     * @Assert\NotBlank()
      * @ORM\ManyToOne(targetEntity="SongGroup", inversedBy="songs")
      * @ORM\JoinColumn(name="song_group_id", referencedColumnName="id")
      * @var [type]
@@ -28,24 +31,28 @@ class Song
     private $song_group;
 
     /**
-     * @ORM\OneToMany(targetEntity="SongVerse", mappedBy="song")
+     * @ORM\OneToMany(targetEntity="SongVerse", mappedBy="song", cascade={"persist"})
+     * @Assert\Valid
      * @var [type]
      */
     private $verses;
 
     /**
+     * @Assert\NotBlank()
      * @ORM\Column(type="integer")
      * @var [type]
      */
     private $song_no;
 
     /**
+     * @Assert\NotBlank()
      * @ORM\Column(type="text")
      * @var [type]
      */
     private $title;
 
     /**
+     * @Assert\NotBlank()
      * @ORM\Column(type="text")
      * @var [type]
      */
@@ -74,6 +81,21 @@ class Song
 
         if($this->getCreatedAt() == null) {
             $this->setCreatedAt(new \DateTime(date('Y-m-d H:i:s')));
+        }
+    }
+
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     * @return [type] [description]
+     */
+    public function setVerseNumbers()
+    {
+        $verseNo = 1;
+        foreach($this->verses as $verse) {
+            $verse->setVerseNo($verseNo);
+
+            $verseNo++;
         }
     }
     /**
@@ -223,7 +245,9 @@ class Song
      */
     public function addVerse(\AppBundle\Entity\SongVerse $verse)
     {
-        $this->verses[] = $verse;
+        $verse->addSong($this);
+
+        $this->verses->add($verse);
 
         return $this;
     }
