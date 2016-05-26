@@ -15,7 +15,6 @@ class SongsController extends Controller
 {
     public function indexAction(Request $request)
     {
-        $songs = null;
         $pagination = null;
 
         $form = $this->createFormBuilder()
@@ -50,7 +49,6 @@ class SongsController extends Controller
 
         return $this->render('songs/index.html.twig', [
             'form' => $form->createView(),
-            'songs' => $songs,
             'pagination' => $pagination,
         ]);
     }
