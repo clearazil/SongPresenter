@@ -16,6 +16,7 @@ class SongsController extends Controller
     public function indexAction(Request $request)
     {
         $songs = null;
+        $pagination = null;
 
         $form = $this->createFormBuilder()
             ->setMethod('POST')
@@ -28,14 +29,29 @@ class SongsController extends Controller
 
         $form->handleRequest($request);
 
-        if($form->isValid()) {
-            $songs = $this->getDoctrine()->getRepository('AppBundle:Song')
-                ->findBy(['song_group' => $request->get('form')['song_group']]);
+        if($request->get('form')['song_group']) {
+            $repository = $this->getDoctrine()
+                ->getRepository('AppBundle:Song');
+
+            $query = $repository->createQueryBuilder('song')
+                ->where('song.song_group = :song_group')
+                ->setParameter('song_group', $request->get('form')['song_group'])
+                ->orderBy('song.song_no', 'ASC')
+                ->getQuery();
+
+            $paginator = $this->get('knp_paginator');
+            $pagination = $paginator->paginate(
+                $query,
+                $request->query->getInt('page', 1),
+                10
+            );
+            $pagination->setParam('form[song_group]', $request->get('form')['song_group']);
         }
 
         return $this->render('songs/index.html.twig', [
             'form' => $form->createView(),
             'songs' => $songs,
+            'pagination' => $pagination,
         ]);
     }
 

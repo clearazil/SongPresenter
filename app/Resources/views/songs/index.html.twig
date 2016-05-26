@@ -6,13 +6,13 @@
     {{ form_row(form.song_group) }}
     {{ form_end(form) }}
 
-    {% if (songs is not null) %}
+    {% if (pagination is not null) %}
 
         <table>
         <tr>
             <td>ID</td><td>Song Number</td><td>Title</td>
         </tr>
-        {% for song in songs %}
+        {% for song in pagination %}
             <tr>
                 <td><a href="{{ path('songs_edit', {'id': song.id}) }}">{{ song.id }}</a></td>
                 <td>{{ song.songno }}</td>
@@ -20,6 +20,10 @@
             </tr>
         {% endfor %}
         </table>
+
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
 
     {% endif %}
 {% endblock %}
