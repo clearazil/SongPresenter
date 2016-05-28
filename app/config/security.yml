@@ -20,8 +20,8 @@ security:
         main:
             anonymous: ~
             form_login:
-                login_path: login
-                check_path: login
+                login_path: homepage
+                check_path: homepage
                 default_target_path: homepage
             provider: db_provider
             logout:

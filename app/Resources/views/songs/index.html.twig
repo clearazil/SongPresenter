@@ -1,4 +1,20 @@
 {% extends 'base.html.twig' %}
+{% block breadcrumbs %}
+
+    <div class="c-layout-breadcrumbs-1 c-fonts-uppercase c-fonts-bold c-bordered c-bordered-both">
+        <div class="container">
+            <div class="c-page-title c-pull-left">
+                <h3 class="c-font-uppercase c-font-sbold">Songs</h3>
+            </div>
+            <ul class="c-page-breadcrumbs c-theme-nav c-pull-right c-fonts-regular">
+                <li>
+                    <a href="{{ path('songs_index') }}">Songs</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}
 
 {% block body %}
 
@@ -8,17 +24,21 @@
 
     {% if (pagination is not null) %}
 
-        <table>
-        <tr>
-            <td>ID</td><td>Song Number</td><td>Title</td>
-        </tr>
-        {% for song in pagination %}
-            <tr>
-                <td><a href="{{ path('songs_edit', {'id': song.id}) }}">{{ song.id }}</a></td>
-                <td>{{ song.songno }}</td>
-                <td>{{ song.title }}</td>
-            </tr>
-        {% endfor %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>ID</td><td>Song Number</td><td>Title</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for song in pagination %}
+                    <tr>
+                        <td><a href="{{ path('songs_edit', {'id': song.id}) }}">{{ song.id }}</a></td>
+                        <td>{{ song.songno }}</td>
+                        <td>{{ song.title }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
         </table>
 
     <div class="navigation">

@@ -42,7 +42,7 @@ class SongsController extends Controller
             $pagination = $paginator->paginate(
                 $query,
                 $request->query->getInt('page', 1),
-                10
+                25
             );
             $pagination->setParam('form[song_group]', $request->get('form')['song_group']);
         }

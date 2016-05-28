@@ -1,7 +1,28 @@
 {% extends 'base.html.twig' %}
 
+{% block breadcrumbs %}
+
+    <div class="c-layout-breadcrumbs-1 c-fonts-uppercase c-fonts-bold c-bordered c-bordered-both">
+        <div class="container">
+            <div class="c-page-title c-pull-left">
+                <h3 class="c-font-uppercase c-font-sbold">Users</h3>
+            </div>
+            <ul class="c-page-breadcrumbs c-theme-nav c-pull-right c-fonts-regular">
+                <li>
+                    <a href="{{ path('users_index') }}">Users</a>
+                </li>
+                <li>/</li>
+                <li>
+                    <a href="{{ path('users_create') }}">Create</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}
+
 {% block body %}
-    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'class': 'form-horizontal'}}) }}
     {{ form_errors(form) }}
     {{ form_row(form.username) }}
     {{ form_row(form.email) }}
