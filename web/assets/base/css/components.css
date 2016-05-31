@@ -2556,7 +2556,7 @@ h1 {
     z-index: 9995;
     width: 100%; }
   .c-layout-header-fixed .c-layout-page {
-    margin-top: 100px; }
+     }
   .c-layout-header-fixed.c-layout-header-topbar .c-layout-page {
     margin-top: 145px; }
   .c-layout-header-fullscreen .c-layout-page,
