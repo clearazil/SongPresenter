@@ -29,13 +29,38 @@
   left: auto;
 }
 
-html,body{
-    height: 100%
+@media (max-width: 991px) {
+  html,body{
+      height: 100%;
+      /* Firefox */
+      height: -moz-calc(100% - 32.5px);
+      /* WebKit */
+      height: -webkit-calc(100% - 32.5px);
+      /* Opera */
+      height: -o-calc(100% - 32.5px);
+      /* Standard */
+      height: calc(100% - 32.5px);
+  }
+}
+
+@media (min-width: 992px) {
+  html,body{
+      height: 100%;
+      /* Firefox */
+      height: -moz-calc(100% - 50px);
+      /* WebKit */
+      height: -webkit-calc(100% - 50px);
+      /* Opera */
+      height: -o-calc(100% - 50px);
+      /* Standard */
+      height: calc(100% - 50px);
+  }
 }
 
 #holder{
     min-height: 100%;
     padding-bottom: 30px;
+
     position:relative;
 }
 
