@@ -22,7 +22,7 @@
 
 {% block body %}
     {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
-
+    
     {{ form_errors(form) }}
 
     {{ form_row(form.song_group) }}
@@ -36,6 +36,14 @@
             {{ form_row(verse.verse, { 'label': 'Verse ' ~ i}) }}
         {% endfor %}
     </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-4 col-md-8" id="button-spot">
+            {{ form_widget(form.add_verse, {'attr': {'class': 'btn-default add-verse-link'}}) }}
+            {{ form_widget(form.submit) }}
+        </div>
+    </div>
+
     
     {{ form_end(form) }}
 {% endblock %}

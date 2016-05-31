@@ -18,7 +18,7 @@
 
 {% block body %}
 
-    {{ form_start(form) }}
+    {{ form_start(form, {'attr': {'class': 'form-inline'}}) }}
     {{ form_row(form.song_group) }}
     {{ form_end(form) }}
 

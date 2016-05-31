@@ -28,6 +28,7 @@ class SongType extends AbstractType
                 'allow_add' => true,
                 'by_reference' => false,
             ])
+            ->add('add_verse', SubmitType::class, ['label' => 'Add Verse'])
             ->add('submit', SubmitType::class, ['label' => 'Create'])
         ;
     }

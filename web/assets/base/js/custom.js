@@ -2,13 +2,12 @@
 
 var $collectionHolder;
 
-var $addVerseLink = $('<a href="#" class="add-verse-link">Add a verse</a>');
-var $newLinkLi = $('<li></li>').append($addVerseLink);
+var $addVerseLink = $("#song_add_verse");
 
 $(document).ready(function() {
     $collectionHolder = $('div.verses');
 
-    $collectionHolder.append($addVerseLink);
+    $("#button-spot").prepend($addVerseLink);
 
     $collectionHolder.data('index', $collectionHolder.find(':input').length);
 
@@ -28,8 +27,11 @@ function addVerseForm($collectionHolder, $addVerseLink) {
 
     $newForm = $(newForm);
 
+    $label = $newForm.find('label');
+
+    $label.text($label.text() + ' ' + (index + 1));
+
     $collectionHolder.data('index', index + 1);
 
-    var $newFormLi = $('<li></li>').append($newForm);
-    $addVerseLink.before($newForm);
+    $collectionHolder.append($newForm);
 }
