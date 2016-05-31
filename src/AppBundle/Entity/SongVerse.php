@@ -36,7 +36,6 @@ class SongVerse
     private $refrain;
 
     /**
-     * @Assert\NotBlank()
      * @ORM\Column(type="integer")
      * @var [type]
      */
