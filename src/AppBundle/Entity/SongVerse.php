@@ -22,14 +22,14 @@ class SongVerse
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Song", inversedBy="songverses")
+     * @ORM\ManyToOne(targetEntity="Song", inversedBy="verses")
      * @ORM\JoinColumn(name="song_id", referencedColumnName="id")
      * @var [type]
      */
     private $song;
 
     /**
-     * @ORM\ManyToOne(targetEntity="SongRefrain", inversedBy="songverses")
+     * @ORM\ManyToOne(targetEntity="SongRefrain", inversedBy="verses")
      * @ORM\JoinColumn(name="refrain_id", referencedColumnName="id")
      * @var [type]
      */

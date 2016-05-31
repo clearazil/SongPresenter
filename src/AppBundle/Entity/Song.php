@@ -24,7 +24,7 @@ class Song
 
     /**
      * @Assert\NotBlank()
-     * @ORM\ManyToOne(targetEntity="SongGroup", inversedBy="songs")
+     * @ORM\ManyToOne(targetEntity="SongGroup")
      * @ORM\JoinColumn(name="song_group_id", referencedColumnName="id")
      * @var [type]
      */

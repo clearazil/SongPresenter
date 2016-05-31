@@ -21,7 +21,7 @@ class SongRefrain
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="SongVerse", mappedBy="songrefrain")
+     * @ORM\OneToMany(targetEntity="SongVerse", mappedBy="refrain")
      * @var [type]
      */
     private $verses;
