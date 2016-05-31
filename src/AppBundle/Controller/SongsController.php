@@ -18,7 +18,7 @@ class SongsController extends Controller
         $pagination = null;
 
         $form = $this->createFormBuilder()
-            ->setMethod('POST')
+            ->setMethod('GET')
             ->add('song_group', EntityType::class, [
                 'class' => 'AppBundle:SongGroup',
                 'choice_label' => 'name'
@@ -44,7 +44,6 @@ class SongsController extends Controller
                 $request->query->getInt('page', 1),
                 25
             );
-            $pagination->setParam('form[song_group]', $request->get('form')['song_group']);
         }
 
         return $this->render('songs/index.html.twig', [
