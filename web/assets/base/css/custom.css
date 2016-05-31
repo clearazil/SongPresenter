@@ -50,3 +50,8 @@ footer{
     left: 0;
     bottom: 0; 
 }
+
+/* Textarea song verses height */
+textarea.textarea-verse {
+  height: 150px;
+}
