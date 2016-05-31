@@ -99,7 +99,7 @@ class LoadSongVerseData extends AbstractFixture implements OrderedFixtureInterfa
                     
                     $verseData = $verseRow;
                 } else {
-                    $verseData .= ';endl;' . $verseRow;
+                    $verseData .= "\n" . $verseRow;
                 }
 
                 $previousVerseNo = $verseNo;
