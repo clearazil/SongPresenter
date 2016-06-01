@@ -4,22 +4,33 @@ namespace AppBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use AppBundle\Form\Type\LoginType;
 
 class SecurityController extends Controller
 {
-    public function loginAction(Request $request)
+    public function loginAction(Request $request, $standardView = true)
     {
         $authUtils = $this->get('security.authentication_utils');
 
-        // get the login error if there is one
-        $error = $authUtils->getLastAuthenticationError();
+        $defaultData = ['username' => $authUtils->getLastUsername()];
+        $login = $this->createForm(LoginType::class, $defaultData, ['action' => $this->generateUrl('login')]);
 
-        // last username entered by the user
-        $lastUsername = $authUtils->getLastUsername();
+        if(!is_null($authUtils->getLastAuthenticationError(false))) {
+            $login->addError(new \Symfony\Component\Form\FormError(
+                $authUtils->getLastAuthenticationError()->getMessageKey()
+            ));
+        }
+
+        $login->handleRequest($request);
+
+        if($standardView) {
+            return $this->render('security/check_login.html.twig', [
+                'login' => $login->createView(),
+            ]);           
+        }
 
         return $this->render('security/login.html.twig', [
-            'last_username' => $lastUsername,
-            'error' => $error,
+            'login' => $login->createView(),
         ]);
     }
 }

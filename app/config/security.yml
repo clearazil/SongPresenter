@@ -20,9 +20,13 @@ security:
         main:
             anonymous: ~
             form_login:
-                login_path: homepage
-                check_path: homepage
+                login_path: login
+                check_path: login
+                username_parameter: login[username]
+                password_parameter: login[password]
                 default_target_path: homepage
+                csrf_token_generator: security.csrf.token_manager
+                csrf_parameter: login[_token]
             provider: db_provider
             logout:
                 path: logout

@@ -1,4 +1,5 @@
 <!-- BEGIN: CONTENT/USER/LOGIN-FORM -->
+
         <div class="modal fade c-content-login-form" id="login-form" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content c-square">
@@ -8,30 +9,19 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        {% if error %}
-                            {{  error.messageKey|trans(error.messageData, 'security') }}
-                        {% endif %}
-                        <form action="{{ path('homepage') }}" method="post">
+                        {{ form_start(login, {'attr': {'novalidate': 'novalidate'}}) }}
                             <div class="form-group">
-                                <label for="login-username" class="hide">Email</label>
-                                <input type="text" class="form-control input-lg c-square" id="username" name="_username" placeholder="Username" value="{{ last_username }}"> </div>
-                            <div class="form-group">
-                                <label for="login-password" class="hide">Password</label>
-                                <input type="password" class="form-control input-lg c-square" id="password" name="_password" placeholder="Password"> </div>
-                            <div class="form-group">
-                                <div class="c-checkbox">
-                                    <input type="checkbox" id="login-rememberme" class="c-check">
-                                    <label for="login-rememberme" class="c-font-thin c-font-17">
-                                        <span></span>
-                                        <span class="check"></span>
-                                        <span class="box"></span> Remember Me </label>
-                                </div>
+                                {{ form_widget(login.username, {'attr': {'placeholder': 'Username', 'class': 'form-control input-lg c-square'}}) }}
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn c-theme-btn btn-md c-btn-uppercase c-btn-bold c-btn-square c-btn-login">Login</button>
+                                {{ form_widget(login.password, {'attr': {'placeholder': 'Password', 'class': 'form-control input-lg c-square'}}) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form_widget(login.login, {'attr': {'class': 'c-theme-btn btn-md'}}) }}
                                 <a href="javascript:;" data-toggle="modal" data-target="#forget-password-form" data-dismiss="modal" class="c-btn-forgot">Forgot Your Password ?</a>
                             </div>
-                        </form>
+                            {{ form_rest(login) }}
+                        {{ form_end(login) }}
                     </div>
                     <div class="modal-footer c-no-border">
                         <span class="c-text-account">Don't Have An Account Yet ?</span>

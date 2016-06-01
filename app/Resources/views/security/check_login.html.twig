@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<div class="col-md-8">
+    <!-- BEGIN: CONTENT/USER/LOGIN-FORM -->
+        {% form_theme login 'form/bootstrap_3_jango_horizontal_layout.html.twig' %}
+        {{ form_start(login, {'attr': {'novalidate': 'novalidate'}}) }}
+        {{ form_errors(login) }}
+        {{ form_row(login.username) }}
+        {{ form_row(login.password) }}
+        {{ form_end(login) }}
+    <!-- END: CONTENT/USER/LOGIN-FORM -->
+</div>
+
+{% endblock %}

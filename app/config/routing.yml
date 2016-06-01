@@ -1,8 +1,11 @@
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+login:
+    path:     /login/{view}
+    defaults: { _controller: AppBundle:Security:login, view: true }
 logout:
-    path:       /logout
+    path:     /logout
 users_index:
     path:     /users
     defaults: { _controller: AppBundle:Users:index }
