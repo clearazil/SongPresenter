@@ -21,7 +21,39 @@ class UsersController extends Controller
         ]);
     }
 
-    public function createAction(Request $request)
+    public function createAction(Request $request, $register = false)
+    {
+        $user = new User();
+
+        $action = $register ? $this->generateUrl('users_register') : $this->generateUrl('users_create');
+
+        $form = $this->createForm(UserType::class, $user, ['action' => $action]);
+
+        $form->handleRequest($request);
+
+        if($form->isValid()) {
+            $encoder = $this->container->get('security.password_encoder');
+            $user->setPassword($encoder->encodePassword($user, $user->getPassword()));
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($user);
+            $em->flush();
+
+            return $this->redirectToRoute('users_index');
+        }
+
+        if($register) {
+            return $this->render('users/register.html.twig', [
+                'form' => $form->createView(),
+            ]);            
+        }
+
+        return $this->render('users/create.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
+    public function registerAction(Request $request)
     {
         $user = new User();
 
@@ -37,12 +69,8 @@ class UsersController extends Controller
             $em->persist($user);
             $em->flush();
 
-            return $this->redirectToRoute('users_index');
+            return $this->redirectToRoute('homepage');
         }
-
-        return $this->render('users/create.html.twig', [
-            'form' => $form->createView(),
-        ]);
     }
 
     public function editAction($id, Request $request)

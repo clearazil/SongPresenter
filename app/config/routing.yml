@@ -9,6 +9,9 @@ logout:
 users_index:
     path:     /users
     defaults: { _controller: AppBundle:Users:index }
+users_register:
+    path:     /users/register
+    defaults: { _controller: AppBundle:Users:register }
 users_create:
     path:     /users/create
     defaults: { _controller: AppBundle:Users:create }
