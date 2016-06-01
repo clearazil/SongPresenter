@@ -156,7 +156,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                                             <a href="{{ path('logout') }}" data-toggle="modal" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-white c-btn-circle c-btn-uppercase c-btn-sbold">
                                                 <i class="icon-user"></i> Logout</a>
                                         {% else %}
