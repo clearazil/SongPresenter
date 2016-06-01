@@ -10,12 +10,12 @@
 {%- endblock form_widget_simple %}
 
 {% block textarea_widget -%}
-    {% set attr = attr|merge({class: (attr.class|default('') ~ ' form-control')|trim}) %}
+    {% set attr = attr|merge({class: (attr.class|default('') ~ ' form-control c-square c-theme')|trim}) %}
     {{- parent() -}}
 {%- endblock textarea_widget %}
 
 {% block button_widget -%}
-    {% set attr = attr|merge({class: (attr.class|default('btn-default') ~ ' btn')|trim}) %}
+    {% set attr = attr|merge({class: (attr.class|default('c-theme-btn') ~ ' btn c-btn-square c-btn-uppercase c-btn-bold')|trim}) %}
     {{- parent() -}}
 {%- endblock %}
 
@@ -88,7 +88,7 @@
 {%- endblock time_widget %}
 
 {% block choice_widget_collapsed -%}
-    {% set attr = attr|merge({class: (attr.class|default('') ~ ' form-control')|trim}) %}
+    {% set attr = attr|merge({class: (attr.class|default('') ~ ' form-control c-square c-theme')|trim}) %}
     {{- parent() -}}
 {%- endblock %}
 
