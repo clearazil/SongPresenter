@@ -51,7 +51,7 @@
                         <!-- BEGIN: BRAND -->
                         <div class="c-navbar-wrapper clearfix">
                             <div class="c-brand c-pull-left">
-                                <a href="{{ path('homepage') }}" class="c-font-uppercase c-font-sbold"><span class="c-theme-color">Song Presenter</span></a>
+                                <a href="{{ path('homepage') }}" class="c-font-uppercase c-font-sbold"><span class="c-theme-color">{% trans %}Song Presenter{% endtrans %}</span></a>
                                 <button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
                                     <span class="c-line"></span>
                                     <span class="c-line"></span>
@@ -89,67 +89,67 @@
                                         </div>
                                     </li>
                                     <li class="c-menu-type-classic {% if app.request.attributes.get('_route') starts with 'songs' %}c-active{% endif %}">
-                                        <a href="javascript:;" class="c-link dropdown-toggle">Songs
+                                        <a href="javascript:;" class="c-link dropdown-toggle">{%trans %}Songs{% endtrans %}
                                             <span class="c-arrow c-toggler"></span>
                                         </a>
                                         <ul class="dropdown-menu c-menu-type-classic c-pull-left">
                                             <li class="dropdown-submenu">
-                                                <a href="{{ path('songs_index') }}">Overview
+                                                <a href="{{ path('songs_index') }}">{% trans %}Overview{% endtrans %}
                                                     <span class="c-arrow c-toggler"></span>
                                                 </a>
                                             </li>
                                             <li class="dropdown-submenu">
-                                                <a href="{{ path('songs_create') }}">Create
+                                                <a href="{{ path('songs_create') }}">{% trans %}Create{% endtrans %}
                                                     <span class="c-arrow c-toggler"></span>
                                                 </a>
                                             </li>
                                             <li class="dropdown-submenu">
-                                                <a href="javascript:;">Bundles
+                                                <a href="javascript:;">{% trans %}Bundles{% endtrans %}
                                                     <span class="c-arrow c-toggler"></span>
                                                 </a>
                                                 <ul class="dropdown-menu c-pull-right">
                                                     <li>
-                                                        <a href="#">Overview</a>
+                                                        <a href="#">{% trans %}Overview{% endtrans %}</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Create</a>
+                                                        <a href="#">{% trans %}Create{% endtrans %}</a>
                                                     </li>
                                                 </ul>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="c-menu-type-classic">
-                                        <a href="javascript:;" class="c-link dropdown-toggle">Presentations
+                                        <a href="javascript:;" class="c-link dropdown-toggle">{% trans %}Presentations{% endtrans %}
                                             <span class="c-arrow c-toggler"></span>
                                         </a>
                                         <ul class="dropdown-menu c-menu-type-classic c-pull-left">
                                             <li class="dropdown-submenu">
-                                                <a href="#">Create
+                                                <a href="#">{% trans %}Create{% endtrans %}
                                                     <span class="c-arrow c-toggler"></span>
                                                 </a>
                                             </li>
                                             <li class="dropdown-submenu">
-                                                <a href="#">Saved
+                                                <a href="#">{% trans %}Saved{% endtrans %}
                                                     <span class="c-arrow c-toggler"></span>
                                                 </a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="c-menu-type-classic {% if app.request.attributes.get('_route') starts with 'users' %}c-active{% endif %}">
-                                        <a href="javascript:;" class="c-link dropdown-toggle">Tools
+                                        <a href="javascript:;" class="c-link dropdown-toggle">{% trans %}Tools{% endtrans %}
                                             <span class="c-arrow c-toggler"></span>
                                         </a>
                                         <ul class="dropdown-menu c-menu-type-classic c-pull-left">
                                             <li class="dropdown-submenu">
-                                                <a href="javascript:;">Users
+                                                <a href="javascript:;">{% trans %}Users{% endtrans %}
                                                     <span class="c-arrow c-toggler"></span>
                                                 </a>
                                                 <ul class="dropdown-menu c-pull-right">
                                                     <li>
-                                                        <a href="{{ path('users_index') }}">Overview</a>
+                                                        <a href="{{ path('users_index') }}">{% trans %}Overview{% endtrans %}</a>
                                                     </li>
                                                     <li>
-                                                        <a href="{{ path('users_create') }}">Create</a>
+                                                        <a href="{{ path('users_create') }}">{% trans %}Create{% endtrans %}</a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -158,19 +158,19 @@
                                     <li>
                                         {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                                             <a href="{{ path('logout') }}" data-toggle="modal" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-white c-btn-circle c-btn-uppercase c-btn-sbold">
-                                                <i class="icon-user"></i> Logout</a>
+                                                <i class="icon-user"></i> {% trans %}Logout{% endtrans %}</a>
                                         {% else %}
                                             <a href="javascript:;" data-toggle="modal" data-target="#login-form" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-white c-btn-circle c-btn-uppercase c-btn-sbold">
-                                                <i class="icon-user"></i> Sign In</a>
+                                                <i class="icon-user"></i> {% trans %}Sign In{% endtrans %}</a>
                                         {% endif %}
                                     </li>
                                     <li class="c-menu-type-classic">
-                                        <a href="#" class="c-link dropdown-toggle">en</a>
+                                        <a href="#" class="c-link dropdown-toggle">nl</a>
                                         <ul class="dropdown-menu c-menu-type-classic c-pull-left" role="menu">
-                                            <li class="c-active">
+                                            <li>
                                                 <a href="#">English</a>
                                             </li>
-                                            <li>
+                                            <li class="c-active">
                                                 <a href="#">Nederlands</a>
                                             </li>
                                     </li>
@@ -195,21 +195,21 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <h3 class="c-font-24 c-font-sbold">Password Recovery</h3>
-                            <p>To recover your password please fill in your email address</p>
+                            <h3 class="c-font-24 c-font-sbold">{% trans %}Password Recovery{% endtrans %}</h3>
+                            <p>{% trans %}To recover your password please fill in your email address{% endtrans %}</p>
                             <form>
                                 <div class="form-group">
-                                    <label for="forget-email" class="hide">Email</label>
+                                    <label for="forget-email" class="hide">{% trans %}Email{% endtrans %}</label>
                                     <input type="email" class="form-control input-lg c-square" id="forget-email" placeholder="Email"> </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn c-theme-btn btn-md c-btn-uppercase c-btn-bold c-btn-square c-btn-login">Submit</button>
-                                    <a href="javascript:;" class="c-btn-forgot" data-toggle="modal" data-target="#login-form" data-dismiss="modal">Back To Login</a>
+                                    <button type="submit" class="btn c-theme-btn btn-md c-btn-uppercase c-btn-bold c-btn-square c-btn-login">{% trans %}Submit{% endtrans %}</button>
+                                    <a href="javascript:;" class="c-btn-forgot" data-toggle="modal" data-target="#login-form" data-dismiss="modal">{% trans %}Back To Login{% endtrans %}</a>
                                 </div>
                             </form>
                         </div>
                         <div class="modal-footer c-no-border">
-                            <span class="c-text-account">Don't Have An Account Yet ?</span>
-                            <a href="javascript:;" data-toggle="modal" data-target="#signup-form" data-dismiss="modal" class="btn c-btn-dark-1 btn c-btn-uppercase c-btn-bold c-btn-slim c-btn-border-2x c-btn-square c-btn-signup">Signup!</a>
+                            <span class="c-text-account">{% trans %}Don't Have An Account Yet ?{% endtrans %}</span>
+                            <a href="javascript:;" data-toggle="modal" data-target="#signup-form" data-dismiss="modal" class="btn c-btn-dark-1 btn c-btn-uppercase c-btn-bold c-btn-slim c-btn-border-2x c-btn-square c-btn-signup">{% trans %}Signup{% endtrans %}!</a>
                         </div>
                     </div>
                 </div>
@@ -225,8 +225,8 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <h3 class="c-font-24 c-font-sbold">Create An Account</h3>
-                            <p>Please fill in below form to create an account with us</p>
+                            <h3 class="c-font-24 c-font-sbold">{% trans %}Create An Account{% endtrans %}</h3>
+                            <p>{% trans %}Please fill in below form to create an account with us{% endtrans %}</p>
                             {{ render(controller('AppBundle:Users:create', {'register': true})) }}
                         </div>
                     </div>
@@ -257,7 +257,7 @@
                         <div class="row">
                             <div class="col-md-6 col-sm-12 c-col">
                                 <p class="c-copyright c-font-grey">2015 &copy; Derk van der Heide
-                                    <span class="c-font-grey-3">All Rights Reserved.</span>
+                                    <span class="c-font-grey-3">{% trans %}All Rights Reserved.{% endtrans %}</span>
                                 </p>
                             </div>
                         </div>

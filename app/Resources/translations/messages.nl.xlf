@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="create">
+                <source>Create</source>
+                <target>Nieuw</target>
+            </trans-unit>
+            <trans-unit id="email">
+                <source>Email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="username">
+                <source>Username</source>
+                <target>Gebruikersnaam</target>
+            </trans-unit>
+            <trans-unit id="password">
+                <source>Password</source>
+                <target>Wachtwoord</target>
+            </trans-unit>
+            <trans-unit id="repeat-password">
+                <source>Repeat Password</source>
+                <target>Herhaal Wachtwoord</target>
+            </trans-unit>
+            <trans-unit id="remember-me">
+                <source>Remember me</source>
+                <target>Onthou mij</target>
+            </trans-unit>
+            <trans-unit id="signup">
+                <source>Signup</source>
+                <target>Registreren</target>
+            </trans-unit>
+            <trans-unit id="login">
+                <source>Login</source>
+                <target>Inloggen</target>
+            </trans-unit>
+            <trans-unit id="song-group">
+                <source>Song group</source>
+                <target>Liedbundel</target>
+            </trans-unit>
+            <trans-unit id="title">
+                <source>Title</source>
+                <target>Titel</target>
+            </trans-unit>
+            <trans-unit id="song-number">
+                <source>Song number</source>
+                <target>Versnummer</target>
+            </trans-unit>
+            <trans-unit id="language">
+                <source>Lang</source>
+                <target>Taal</target>
+            </trans-unit>
+            <trans-unit id="verse">
+                <source>Verse</source>
+                <target>Verse</target>
+            </trans-unit>
+            <trans-unit id="add-verse">
+                <source>Add Verse</source>
+                <target>Vers Toevoegen</target>
+            </trans-unit>
+            <trans-unit id="submit">
+                <source>Submit</source>
+                <target>Verzenden</target>
+            </trans-unit>
+            <trans-unit id="song-presenter">
+                <source>Song Presenter</source>
+                <target>Beamer Presentatie Maker</target>
+            </trans-unit>
+            <trans-unit id="songs">
+                <source>Songs</source>
+                <target>Liederen</target>
+            </trans-unit>
+            <trans-unit id="overview">
+                <source>Overview</source>
+                <target>Overzicht</target>
+            </trans-unit>
+            <trans-unit id="bundles">
+                <source>Bundles</source>
+                <target>Liedbundels</target>
+            </trans-unit>
+            <trans-unit id="presentations">
+                <source>Presentations</source>
+                <target>Presentaties</target>
+            </trans-unit>
+            <trans-unit id="saved">
+                <source>Saved</source>
+                <target>Opgeslagen</target>
+            </trans-unit>
+            <trans-unit id="tools">
+                <source>Tools</source>
+                <target>Gereedschappen</target>
+            </trans-unit>
+            <trans-unit id="users">
+                <source>Users</source>
+                <target>Gebruikers</target>
+            </trans-unit>
+            <trans-unit id="sign-in">
+                <source>Sign In</source>
+                <target>Inloggen</target>
+            </trans-unit>
+            <trans-unit id="forgot-password">
+                <source>Forgot Your Password ?</source>
+                <target>Wachtwoord vergeten?</target>
+            </trans-unit>
+            <trans-unit id="password-recovery">
+                <source>Password Recovery</source>
+                <target>Wachtwoord Resetten</target>
+            </trans-unit>
+            <trans-unit id="recover-password-message">
+                <source>To recover your password please fill in your email address</source>
+                <target>Vul hier je email adres in om je wachtwoord te resetten</target>
+            </trans-unit>
+            <trans-unit id="back-to-login">
+                <source>Back To Login</source>
+                <target>Terug Naar Inloggen</target>
+            </trans-unit>
+            <trans-unit id="no-account">
+                <source>Don't Have An Account Yet ?</source>
+                <target>Nog geen gebruikersaccount?</target>
+            </trans-unit>
+            <trans-unit id="create-account">
+                <source>Create An Account</source>
+                <target>Maak Een Account Aan</target>
+            </trans-unit>
+            <trans-unit id="fill-in-form-to-create-account">
+                <source>Please fill in below form to create an account with us</source>
+                <target>Vul dit formulier in om een account aan te maken</target>
+            </trans-unit>
+            <trans-unit id="rights-reserved">
+                <source>All Rights Reserved.</source>
+                <target>Alle rechten voorbehouden.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
