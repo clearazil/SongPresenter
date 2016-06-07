@@ -79,3 +79,4 @@ knp_paginator:
     template:
         pagination: pagination/jango-square.html.twig     
         sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig # sort link template
+be_simple_i18n_routing: ~
