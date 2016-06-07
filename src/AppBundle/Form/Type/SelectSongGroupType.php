@@ -15,9 +15,10 @@ class SongType extends AbstractType
         $builder->setMethod('GET')
             ->add('song_group', EntityType::class, [
                 'class' => 'AppBundle:SongGroup',
-                'choice_label' => 'name'
+                'choice_label' => 'name',
+                'label' => 'LABEL_SONG_GROUP_SONG_BUNDLE',
             ])
-            ->add('submit', SubmitType::class, ['label' => 'Submit'])
+            ->add('submit', SubmitType::class, ['label' => 'LABEL_SONG_GROUP_SELECT'])
         ;
     }
 

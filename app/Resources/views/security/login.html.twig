@@ -11,24 +11,24 @@
                     <div class="modal-body">
                         {{ form_start(login, {'attr': {'novalidate': 'novalidate'}}) }}
                             <div class="form-group">
-                                {{ form_widget(login.username, {'attr': {'placeholder': 'Username', 'class': 'form-control input-lg c-square'}}) }}
+                                {{ form_widget(login.username, {'attr': {'placeholder': login.username.vars.label, 'class': 'form-control input-lg c-square'}}) }}
                             </div>
                             <div class="form-group">
-                                {{ form_widget(login.password, {'attr': {'placeholder': 'Password', 'class': 'form-control input-lg c-square'}}) }}
+                                {{ form_widget(login.password, {'attr': {'placeholder': login.password.vars.label, 'class': 'form-control input-lg c-square'}}) }}
                             </div>
                             <div class="form-group">
                                 {{ form_widget(login.remember_me, {'id': 'remember_me'}) }}
                             </div>
                             <div class="form-group">
                                 {{ form_widget(login.login, {'attr': {'class': 'c-theme-btn btn-md'}}) }}
-                                <a href="javascript:;" data-toggle="modal" data-target="#forget-password-form" data-dismiss="modal" class="c-btn-forgot">{% trans %}Forgot Your Password ?{% endtrans %}</a>
+                                <a href="javascript:;" data-toggle="modal" data-target="#forget-password-form" data-dismiss="modal" class="c-btn-forgot">{% trans %}LOGIN_FORGOT_PASSWORD{% endtrans %}</a>
                             </div>
                             {{ form_rest(login) }}
                         {{ form_end(login) }}
                     </div>
                     <div class="modal-footer c-no-border">
-                        <span class="c-text-account">{% trans %}Don't Have An Account Yet ?{% endtrans %}</span>
-                        <a href="javascript:;" data-toggle="modal" data-target="#signup-form" data-dismiss="modal" class="btn c-btn-dark-1 btn c-btn-uppercase c-btn-bold c-btn-slim c-btn-border-2x c-btn-square c-btn-signup">{% trans %}Signup{% endtrans %}!</a>
+                        <span class="c-text-account">{% trans %}LOGIN_NO_ACCOUNT_YET{% endtrans %}</span>
+                        <a href="javascript:;" data-toggle="modal" data-target="#signup-form" data-dismiss="modal" class="btn c-btn-dark-1 btn c-btn-uppercase c-btn-bold c-btn-slim c-btn-border-2x c-btn-square c-btn-signup">{% trans from "forms" %}BUTTON_LOGIN_SIGNUP{% endtrans %}</a>
                     </div>
                 </div>
             </div>

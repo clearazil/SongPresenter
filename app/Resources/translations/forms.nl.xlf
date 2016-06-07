@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <!-- Labels -->
+            <trans-unit id="label_login_username">
+                <source>LABEL_LOGIN_USERNAME</source>
+                <target>Gebruikersnaam</target>
+            </trans-unit>
+            <trans-unit id="label_login_password">
+                <source>LABEL_LOGIN_PASSWORD</source>
+                <target>Wachtwoord</target>
+            </trans-unit>
+            <trans-unit id="label_login_remember_me">
+                <source>LABEL_LOGIN_REMEMBER_ME</source>
+                <target>Onthou mij</target>
+            </trans-unit> 
+            <trans-unit id="label_user_username">
+                <source>LABEL_USER_USERNAME</source>
+                <target>Gebruikersnaam</target>
+            </trans-unit>
+            <trans-unit id="label_user_email">
+                <source>LABEL_USER_EMAIL</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="label_user_password">
+                <source>LABEL_USER_PASSWORD</source>
+                <target>Wachtwoord</target>
+            </trans-unit>
+            <trans-unit id="label_user_password_repeat">
+                <source>LABEL_USER_PASSWORD_REPEAT</source>
+                <target>Wachtwoord herhalen</target>
+            </trans-unit>
+            <trans-unit id="label_password_recovery_email">
+                <source>LABEL_PASSWORD_RECOVERY_EMAIL</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="label_song_group_song_bundle">
+                <source>LABEL_SONG_GROUP_SONG_BUNDLE</source>
+                <target>Liedbundel</target>
+            </trans-unit>
+            <trans-unit id="label_song_title">
+                <source>LABEL_SONG_TITLE</source>
+                <target>Titel</target>
+            </trans-unit>
+            <trans-unit id="label_song_number">
+                <source>LABEL_SONG_NUMBER</source>
+                <target>Nummer</target>
+            </trans-unit>
+            <trans-unit id="label_song_language">
+                <source>LABEL_SONG_LANGUAGE</source>
+                <target>Taal</target>
+            </trans-unit>
+            <trans-unit id="label_song_verse_verse">
+                <source>LABEL_SONG_VERSE_VERSE%no%</source>
+                <target>Vers %no%</target>
+            </trans-unit>
+            <!-- Buttons -->
+            <trans-unit id="button_login_login">
+                <source>BUTTON_LOGIN_LOGIN</source>
+                <target>Inloggen</target>
+            </trans-unit>
+            <trans-unit id="button_login_create_account">
+                <source>BUTTON_LOGIN_CREATE_ACCOUNT</source>
+                <target>Registreren</target>
+            </trans-unit>
+            <trans-unit id="button_login_signup">
+                <source>BUTTON_LOGIN_SIGNUP</source>
+                <target>Registeren</target>
+            </trans-unit>
+            <trans-unit id="button_password_recovery_submit">
+                <source>BUTTON_PASSWORD_RECOVERY_SUBMIT</source>
+                <target>Verzenden</target>
+            </trans-unit>
+            <trans-unit id="button_user_register">
+                <source>BUTTON_USER_REGISTER</source>
+                <target>Registreren</target>
+            </trans-unit>
+            <trans-unit id="button_user_create">
+                <source>BUTTON_USER_CREATE</source>
+                <target>Aanmaken</target>
+            </trans-unit>
+            <trans-unit id="button_user_edit">
+                <source>BUTTON_USER_EDIT</source>
+                <target>Wijzigen</target>
+            </trans-unit>
+            <trans-unit id="button_song_group_select">
+                <source>BUTTON_SONG_GROUP_SELECT</source>
+                <target>Weergeven</target>
+            </trans-unit>
+            <trans-unit id="button_song_add_verse">
+                <source>BUTTON_SONG_ADD_VERSE</source>
+                <target>Vers toevoegen</target>
+            </trans-unit>
+            <trans-unit id="button_song_create">
+                <source>BUTTON_SONG_CREATE</source>
+                <target>Aanmaken</target>
+            </trans-unit>
+            <trans-unit id="button_song_edit">
+                <source>BUTTON_SONG_EDIT</source>
+                <target>Wijzigen</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

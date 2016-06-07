@@ -4,15 +4,15 @@
     <div class="c-layout-breadcrumbs-1 c-fonts-uppercase c-fonts-bold c-bordered c-bordered-both">
         <div class="container">
             <div class="c-page-title c-pull-left">
-                <h3 class="c-font-uppercase c-font-sbold">Songs</h3>
+                <h3 class="c-font-uppercase c-font-sbold">{% trans %}BREADCRUMB_SONGS{% endtrans %}</h3>
             </div>
             <ul class="c-page-breadcrumbs c-theme-nav c-pull-right c-fonts-regular">
                 <li>
-                    <a href="{{ path('songs_index') }}">Songs</a>
+                    <a href="{{ path('songs_index') }}">{% trans %}PATH_SONGS_SONGS{% endtrans %}</a>
                 </li>
                 <li>/</li>
                 <li class="c-state_active">
-                    <a href="{{ path('songs_create') }}">Create</a>
+                    <a href="{{ path('songs_create') }}">{% trans %}PATH_SONGS_CREATE{% endtrans %}</a>
                 </li>
             </ul>
         </div>
@@ -33,7 +33,7 @@
     <div class="verses" data-prototype="{{ form_widget(form.verses.vars.prototype)|e }}">
         {% for verse in form.verses %}
             {% set i = i + 1 %}
-            {{ form_row(verse.verse, { 'label': 'Verse ' ~ i}) }}
+            {{ form_row(verse.verse, { 'label': verse.verse.vars.label|trans({'%no%': i}, "forms") }) }}
         {% endfor %}
     </div>
 

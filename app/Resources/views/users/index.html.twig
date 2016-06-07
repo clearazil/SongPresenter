@@ -5,11 +5,11 @@
     <div class="c-layout-breadcrumbs-1 c-fonts-uppercase c-fonts-bold c-bordered c-bordered-both">
         <div class="container">
             <div class="c-page-title c-pull-left">
-                <h3 class="c-font-uppercase c-font-sbold">Users</h3>
+                <h3 class="c-font-uppercase c-font-sbold">{% trans %}BREADCRUMB_USERS{% endtrans %}</h3>
             </div>
             <ul class="c-page-breadcrumbs c-theme-nav c-pull-right c-fonts-regular">
                 <li>
-                    <a href="{{ path('users_index') }}">Users</a>
+                    <a href="{{ path('users_index') }}">{% trans %}PATH_USERS_USERS{% endtrans %}</a>
                 </li>
             </ul>
         </div>
@@ -21,7 +21,7 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <td>ID</td><td>Username</td><td>Email</td>
+                <td>{% trans %}USERS_ID{% endtrans %}</td><td>{% trans %}USERS_USERNAME{% endtrans %}</td><td>{% trans %}USERS_EMAIL{% endtrans %}</td>
             </tr>
         </thead>
         <tbody>

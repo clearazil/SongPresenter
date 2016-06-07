@@ -17,13 +17,14 @@ class SongsController extends Controller
     {
         $pagination = null;
 
-        $form = $this->createFormBuilder()
+        $form = $this->createFormBuilder([], ['translation_domain' => 'forms'])
             ->setMethod('GET')
             ->add('song_group', EntityType::class, [
                 'class' => 'AppBundle:SongGroup',
-                'choice_label' => 'name'
+                'choice_label' => 'name',
+                'label' => 'LABEL_SONG_GROUP_SONG_BUNDLE',
             ])
-            ->add('submit', SubmitType::class, ['label' => 'Submit'])
+            ->add('submit', SubmitType::class, ['label' => 'BUTTON_SONG_GROUP_SELECT'])
             ->getForm();
 
         $form->handleRequest($request);

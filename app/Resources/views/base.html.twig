@@ -7,7 +7,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}{% trans %}BASE_TITLE{% endtrans %}{% endblock %}</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -51,7 +51,7 @@
                         <!-- BEGIN: BRAND -->
                         <div class="c-navbar-wrapper clearfix">
                             <div class="c-brand c-pull-left">
-                                <a href="{{ path('homepage') }}" class="c-font-uppercase c-font-sbold"><span class="c-theme-color">{% trans %}Song Presenter{% endtrans %}</span></a>
+                                <a href="{{ path('homepage') }}" class="c-font-uppercase c-font-sbold"><span class="c-theme-color">{% trans %}BASE_HOMEPAGE_TITLE{% endtrans %}</span></a>
                                 <button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
                                     <span class="c-line"></span>
                                     <span class="c-line"></span>
@@ -89,67 +89,67 @@
                                         </div>
                                     </li>
                                     <li class="c-menu-type-classic {% if app.request.attributes.get('_route') starts with 'songs' %}c-active{% endif %}">
-                                        <a href="javascript:;" class="c-link dropdown-toggle">{%trans %}Songs{% endtrans %}
+                                        <a href="javascript:;" class="c-link dropdown-toggle">{%trans %}BASE_SONGS{% endtrans %}
                                             <span class="c-arrow c-toggler"></span>
                                         </a>
                                         <ul class="dropdown-menu c-menu-type-classic c-pull-left">
                                             <li class="dropdown-submenu">
-                                                <a href="{{ path('songs_index') }}">{% trans %}Overview{% endtrans %}
+                                                <a href="{{ path('songs_index') }}">{% trans %}BASE_SONGS_OVERVIEW{% endtrans %}
                                                     <span class="c-arrow c-toggler"></span>
                                                 </a>
                                             </li>
                                             <li class="dropdown-submenu">
-                                                <a href="{{ path('songs_create') }}">{% trans %}Create{% endtrans %}
+                                                <a href="{{ path('songs_create') }}">{% trans %}BASE_SONGS_CREATE{% endtrans %}
                                                     <span class="c-arrow c-toggler"></span>
                                                 </a>
                                             </li>
                                             <li class="dropdown-submenu">
-                                                <a href="javascript:;">{% trans %}Bundles{% endtrans %}
+                                                <a href="javascript:;">{% trans %}BASE_BUNDLES{% endtrans %}
                                                     <span class="c-arrow c-toggler"></span>
                                                 </a>
                                                 <ul class="dropdown-menu c-pull-right">
                                                     <li>
-                                                        <a href="#">{% trans %}Overview{% endtrans %}</a>
+                                                        <a href="#">{% trans %}BASE_BUNDLES_OVERVIEW{% endtrans %}</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">{% trans %}Create{% endtrans %}</a>
+                                                        <a href="#">{% trans %}BASE_BUNDLES_CREATE{% endtrans %}</a>
                                                     </li>
                                                 </ul>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="c-menu-type-classic">
-                                        <a href="javascript:;" class="c-link dropdown-toggle">{% trans %}Presentations{% endtrans %}
+                                        <a href="javascript:;" class="c-link dropdown-toggle">{% trans %}BASE_PRESENTATIONS{% endtrans %}
                                             <span class="c-arrow c-toggler"></span>
                                         </a>
                                         <ul class="dropdown-menu c-menu-type-classic c-pull-left">
                                             <li class="dropdown-submenu">
-                                                <a href="#">{% trans %}Create{% endtrans %}
+                                                <a href="#">{% trans %}BASE_PRESENTATIONS_CREATE{% endtrans %}
                                                     <span class="c-arrow c-toggler"></span>
                                                 </a>
                                             </li>
                                             <li class="dropdown-submenu">
-                                                <a href="#">{% trans %}Saved{% endtrans %}
+                                                <a href="#">{% trans %}BASE_PRESENTATIONS_SAVED{% endtrans %}
                                                     <span class="c-arrow c-toggler"></span>
                                                 </a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="c-menu-type-classic {% if app.request.attributes.get('_route') starts with 'users' %}c-active{% endif %}">
-                                        <a href="javascript:;" class="c-link dropdown-toggle">{% trans %}Tools{% endtrans %}
+                                        <a href="javascript:;" class="c-link dropdown-toggle">{% trans %}BASE_TOOLS{% endtrans %}
                                             <span class="c-arrow c-toggler"></span>
                                         </a>
                                         <ul class="dropdown-menu c-menu-type-classic c-pull-left">
                                             <li class="dropdown-submenu">
-                                                <a href="javascript:;">{% trans %}Users{% endtrans %}
+                                                <a href="javascript:;">{% trans %}BASE_TOOLS_USERS{% endtrans %}
                                                     <span class="c-arrow c-toggler"></span>
                                                 </a>
                                                 <ul class="dropdown-menu c-pull-right">
                                                     <li>
-                                                        <a href="{{ path('users_index') }}">{% trans %}Overview{% endtrans %}</a>
+                                                        <a href="{{ path('users_index') }}">{% trans %}BASE_USERS_OVERVIEW{% endtrans %}</a>
                                                     </li>
                                                     <li>
-                                                        <a href="{{ path('users_create') }}">{% trans %}Create{% endtrans %}</a>
+                                                        <a href="{{ path('users_create') }}">{% trans %}BASE_USERS_CREATE{% endtrans %}</a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -158,10 +158,10 @@
                                     <li>
                                         {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                                             <a href="{{ path('logout') }}" data-toggle="modal" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-white c-btn-circle c-btn-uppercase c-btn-sbold">
-                                                <i class="icon-user"></i> {% trans %}Logout{% endtrans %}</a>
+                                                <i class="icon-user"></i> {% trans %}BASE_LOGOUT{% endtrans %}</a>
                                         {% else %}
                                             <a href="javascript:;" data-toggle="modal" data-target="#login-form" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-white c-btn-circle c-btn-uppercase c-btn-sbold">
-                                                <i class="icon-user"></i> {% trans %}Sign In{% endtrans %}</a>
+                                                <i class="icon-user"></i> {% trans %}BASE_LOGIN{% endtrans %}</a>
                                         {% endif %}
                                     </li>
                                     <li class="c-menu-type-classic">
@@ -195,21 +195,21 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <h3 class="c-font-24 c-font-sbold">{% trans %}Password Recovery{% endtrans %}</h3>
-                            <p>{% trans %}To recover your password please fill in your email address{% endtrans %}</p>
+                            <h3 class="c-font-24 c-font-sbold">{% trans %}BASE_PASSWORD_RECOVERY{% endtrans %}</h3>
+                            <p>{% trans %}BASE_PASSWORD_RECOVERY_MESSAGE{% endtrans %}</p>
                             <form>
                                 <div class="form-group">
-                                    <label for="forget-email" class="hide">{% trans %}Email{% endtrans %}</label>
+                                    <label for="forget-email" class="hide">{% trans from "forms" %}LABEL_PASSWORD_RECOVERY_EMAIL{% endtrans %}</label>
                                     <input type="email" class="form-control input-lg c-square" id="forget-email" placeholder="Email"> </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn c-theme-btn btn-md c-btn-uppercase c-btn-bold c-btn-square c-btn-login">{% trans %}Submit{% endtrans %}</button>
-                                    <a href="javascript:;" class="c-btn-forgot" data-toggle="modal" data-target="#login-form" data-dismiss="modal">{% trans %}Back To Login{% endtrans %}</a>
+                                    <button type="submit" class="btn c-theme-btn btn-md c-btn-uppercase c-btn-bold c-btn-square c-btn-login">{% trans from "forms" %}BUTTON_PASSWORD_RECOVERY_SUBMIT{% endtrans %}</button>
+                                    <a href="javascript:;" class="c-btn-forgot" data-toggle="modal" data-target="#login-form" data-dismiss="modal">{% trans %}BASE_BACK_TO_LOGIN{% endtrans %}</a>
                                 </div>
                             </form>
                         </div>
                         <div class="modal-footer c-no-border">
-                            <span class="c-text-account">{% trans %}Don't Have An Account Yet ?{% endtrans %}</span>
-                            <a href="javascript:;" data-toggle="modal" data-target="#signup-form" data-dismiss="modal" class="btn c-btn-dark-1 btn c-btn-uppercase c-btn-bold c-btn-slim c-btn-border-2x c-btn-square c-btn-signup">{% trans %}Signup{% endtrans %}!</a>
+                            <span class="c-text-account">{% trans %}BASE_NO_ACCOUNT_YET{% endtrans %}</span>
+                            <a href="javascript:;" data-toggle="modal" data-target="#signup-form" data-dismiss="modal" class="btn c-btn-dark-1 btn c-btn-uppercase c-btn-bold c-btn-slim c-btn-border-2x c-btn-square c-btn-signup">{% trans from "forms" %}BUTTON_LOGIN_CREATE_ACCOUNT{% endtrans %}</a>
                         </div>
                     </div>
                 </div>
@@ -225,8 +225,8 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <h3 class="c-font-24 c-font-sbold">{% trans %}Create An Account{% endtrans %}</h3>
-                            <p>{% trans %}Please fill in below form to create an account with us{% endtrans %}</p>
+                            <h3 class="c-font-24 c-font-sbold">{% trans %}BASE_CREATE_ACCOUNT{% endtrans %}</h3>
+                            <p>{% trans %}BASE_REGISTER_MESSAGE{% endtrans %}</p>
                             {{ render(controller('AppBundle:Users:create', {'register': true})) }}
                         </div>
                     </div>
@@ -257,7 +257,7 @@
                         <div class="row">
                             <div class="col-md-6 col-sm-12 c-col">
                                 <p class="c-copyright c-font-grey">2015 &copy; Derk van der Heide
-                                    <span class="c-font-grey-3">{% trans %}All Rights Reserved.{% endtrans %}</span>
+                                    <span class="c-font-grey-3">{% trans %}BASE_RIGHTS_RESERVED{% endtrans %}.</span>
                                 </p>
                             </div>
                         </div>

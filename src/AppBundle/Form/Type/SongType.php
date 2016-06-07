@@ -18,18 +18,19 @@ class SongType extends AbstractType
         $builder->setMethod('POST')
             ->add('song_group', EntityType::class, [
                 'class' => 'AppBundle:SongGroup',
-                'choice_label' => 'name'
+                'choice_label' => 'name',
+                'label' => 'LABEL_SONG_GROUP_SONG_BUNDLE',
             ])
-            ->add('song_no', IntegerType::class, ['label' => 'Song number'])
-            ->add('title', TextType::class)
-            ->add('lang', TextType::class)
+            ->add('song_no', IntegerType::class, ['label' => 'LABEL_SONG_NUMBER'])
+            ->add('title', TextType::class, ['label' => 'LABEL_SONG_TITLE'])
+            ->add('lang', TextType::class, ['label' => 'LABEL_SONG_LANGUAGE'])
             ->add('verses', CollectionType::class, [
                 'entry_type' => SongVerseType::class,
                 'allow_add' => true,
                 'by_reference' => false,
             ])
-            ->add('add_verse', SubmitType::class, ['label' => 'Add Verse'])
-            ->add('submit', SubmitType::class, ['label' => 'Create'])
+            ->add('add_verse', SubmitType::class, ['label' => 'BUTTON_SONG_ADD_VERSE'])
+            ->add('submit', SubmitType::class, ['label' => 'BUTTON_SONG_CREATE'])
         ;
     }
 
@@ -37,6 +38,7 @@ class SongType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => 'AppBundle\Entity\Song',
+            'translation_domain' => 'forms',
         ]);
     }
 }

@@ -11,7 +11,7 @@ class SongVerseType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('verse', TextareaType::class, ['attr' => ['class' => 'textarea-verse']]);
+        $builder->add('verse', TextareaType::class, ['attr' => ['class' => 'textarea-verse'], 'label' => 'LABEL_SONG_VERSE_VERSE%no%']);
     }
 
     public function configureOptions(OptionsResolver $resolver)

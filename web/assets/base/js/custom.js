@@ -29,7 +29,7 @@ function addVerseForm($collectionHolder, $addVerseLink) {
 
     $label = $newForm.find('label');
 
-    $label.text($label.text() + ' ' + (index + 1));
+    $label.text($label.text().replace('%no%', (index + 1)));
 
     $collectionHolder.data('index', index + 1);
 

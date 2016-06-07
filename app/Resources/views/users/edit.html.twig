@@ -5,15 +5,15 @@
     <div class="c-layout-breadcrumbs-1 c-fonts-uppercase c-fonts-bold c-bordered c-bordered-both">
         <div class="container">
             <div class="c-page-title c-pull-left">
-                <h3 class="c-font-uppercase c-font-sbold">Users</h3>
+                <h3 class="c-font-uppercase c-font-sbold">{% trans %}BREADCRUMB_USERS{% endtrans %}</h3>
             </div>
             <ul class="c-page-breadcrumbs c-theme-nav c-pull-right c-fonts-regular">
                 <li>
-                    <a href="{{ path('users_index') }}">Users</a>
+                    <a href="{{ path('users_index') }}">{% trans %}PATH_USERS_USERS{% endtrans %}</a>
                 </li>
                 <li>/</li>
                 <li>
-                    <a href="{{ path('users_edit', {'id': form.vars.data.id }) }}">Edit</a>
+                    <a href="{{ path('users_edit', {'id': form.vars.data.id }) }}">{% trans %}PATH_USERS_EDIT{% endtrans %}</a>
                 </li>
             </ul>
         </div>
@@ -27,5 +27,6 @@
     {{ form_row(form.username) }}
     {{ form_row(form.email) }}
     {{ form_row(form.password) }}
+    {{ form_row(form.create, {'label': 'BUTTON_USER_EDIT'}) }}
     {{ form_end(form) }}
 {% endblock %}

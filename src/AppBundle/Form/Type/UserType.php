@@ -15,15 +15,15 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->setMethod('POST')
-            ->add('username', TextType::class)
+            ->add('username', TextType::class, ['label' => 'LABEL_USER_USERNAME'])
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'invalid_message' => 'The password fields must match.',
-                'first_options' => ['label' => 'Password'],
-                'second_options' => ['label' => 'Repeat Password'],
+                'first_options' => ['label' => 'LABEL_USER_PASSWORD'],
+                'second_options' => ['label' => 'LABEL_USER_PASSWORD_REPEAT'],
             ])
-            ->add('email', TextType::class)
-            ->add('create', SubmitType::class, ['label' => 'Create'])
+            ->add('email', TextType::class, ['label' => 'LABEL_USER_EMAIL'])
+            ->add('create', SubmitType::class, ['label' => 'BUTTON_USER_CREATE'])
         ;
     }
 
@@ -31,6 +31,7 @@ class UserType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => 'AppBundle\Entity\User',
+            'translation_domain' => 'forms',
         ]);
     }
 }
