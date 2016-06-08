@@ -1,0 +1,29 @@
+homepage:
+    locales:    { en: "/home", nl: "/" }
+    defaults:   { _controller: AppBundle:Default:index }
+login:
+    locales:    { en: "/login/{view}", nl: "/inloggen/{view}" }
+    defaults:   { _controller: AppBundle:Security:login, view: true }
+logout:
+    locales:    { en: "/logout", nl: "/uitloggen" }
+users_index:
+    locales:    { en: "/users", nl: "/gebruikers" }
+    defaults:   { _controller: AppBundle:Users:index }
+users_register:
+    locales:    { en: "/register", nl: "registeren" }
+    defaults:   { _controller: AppBundle:Users:register }
+users_create:
+    locales:    { en: "/users/create", nl: "/gebruikers/nieuw" }
+    defaults:   { _controller: AppBundle:Users:create }
+users_edit:
+    locales:    { en: "/users/edit/{id}", nl: "/gebruikers/wijzigen/{id}" }
+    defaults:   { _controller: AppBundle:Users:edit }
+songs_index:
+    locales:    { en: "/songs", nl: "/liederen" }
+    defaults:   { _controller: AppBundle:Songs:index }
+songs_create:
+    locales:    { en: "/songs/create", nl: "/liederen/nieuw" }
+    defaults:   { _controller: AppBundle:Songs:create }
+songs_edit:
+    locales:    { en: "/songs/edit/{id}", nl: "/liederen/wijzigen/{id}" }
+    defaults:   { _controller: AppBundle:Songs:edit }

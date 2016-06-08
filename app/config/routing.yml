@@ -1,30 +1,5 @@
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
-login:
-    path:     /login/{view}
-    defaults: { _controller: AppBundle:Security:login, view: true }
-logout:
-    path:     /logout
-users_index:
-    path:     /users
-    defaults: { _controller: AppBundle:Users:index }
-users_register:
-    path:     /register
-    defaults: { _controller: AppBundle:Users:register }
-users_create:
-    path:     /users/create
-    defaults: { _controller: AppBundle:Users:create }
-users_edit:
-    path:     /users/edit/{id}
-    defaults: { _controller: AppBundle:Users:edit }
-songs_index:
-    path:     /songs
-    defaults: { _controller: AppBundle:Songs:index }
-songs_create:
-    path:     /songs/create
-    defaults: { _controller: AppBundle:Songs:create }
-songs_edit:
-    path:     /songs/edit/{id}
-    defaults: { _controller: AppBundle:Songs:edit }
+my_yaml_i18n_routes:
+    resource: "routes/i18n.yml"
+    type: be_simple_i18n
+
 
