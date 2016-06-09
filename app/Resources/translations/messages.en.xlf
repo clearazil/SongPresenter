@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <!-- Base -->
+            <trans-unit id="base_title">
+                <source>BASE_TITLE</source>
+                <target>Welcome!</target>
+            </trans-unit>
+            <trans-unit id="base_homepage_title">
+                <source>BASE_HOMEPAGE_TITLE</source>
+                <target>Song Presenter</target>
+            </trans-unit>
+            <trans-unit id="base_songs">
+                <source>BASE_SONGS</source>
+                <target>Songs</target>
+            </trans-unit>
+            <trans-unit id="base_songs_overview">
+                <source>BASE_SONGS_OVERVIEW</source>
+                <target>Overview</target>
+            </trans-unit>
+            <trans-unit id="base_songs_create">
+                <source>BASE_SONGS_CREATE</source>
+                <target>Create</target>
+            </trans-unit>
+            <trans-unit id="base_bundles">
+                <source>BASE_BUNDLES</source>
+                <target>Song bundles</target>
+            </trans-unit>
+            <trans-unit id="base_bundles_overview">
+                <source>BASE_BUNDLES_OVERVIEW</source>
+                <target>Overview</target>
+            </trans-unit>
+            <trans-unit id="base_bundles_create">
+                <source>BASE_BUNDLES_CREATE</source>
+                <target>Create</target>
+            </trans-unit>
+            <trans-unit id="base_presentations">
+                <source>BASE_PRESENTATIONS</source>
+                <target>Presentations</target>
+            </trans-unit>
+            <trans-unit id="base_presentations_create">
+                <source>BASE_PRESENTATIONS_CREATE</source>
+                <target>Create</target>
+            </trans-unit>
+            <trans-unit id="base_presentations_saved">
+                <source>BASE_PRESENTATIONS_SAVED</source>
+                <target>Saved</target>
+            </trans-unit>
+            <trans-unit id="base_tools">
+                <source>BASE_TOOLS</source>
+                <target>Tools</target>
+            </trans-unit>
+            <trans-unit id="base_tools_users">
+                <source>BASE_TOOLS_USERS</source>
+                <target>Users</target>
+            </trans-unit>
+            <trans-unit id="base_users_overview">
+                <source>BASE_USERS_OVERVIEW</source>
+                <target>Overview</target>
+            </trans-unit>
+            <trans-unit id="base_users_create">
+                <source>BASE_USERS_CREATE</source>
+                <target>Create</target>
+            </trans-unit>
+            <trans-unit id="base_login">
+                <source>BASE_LOGIN</source>
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="base_logout">
+                <source>BASE_LOGOUT</source>
+                <target>Logout</target>
+            </trans-unit>
+            <trans-unit id="base_password_recovery">
+                <source>BASE_PASSWORD_RECOVERY</source>
+                <target>Password Recovery</target>
+            </trans-unit>
+            <trans-unit id="base_password_recovery_message">
+                <source>BASE_PASSWORD_RECOVERY_MESSAGE</source>
+                <target>To recover your password please fill in your email address</target>
+            </trans-unit>
+            <trans-unit id="base_back_to_login">
+                <source>BASE_BACK_TO_LOGIN</source>
+                <target>Back To Login</target>
+            </trans-unit>
+            <trans-unit id="base_no_account_yet">
+                <source>BASE_NO_ACCOUNT_YET</source>
+                <target>Don't have an account yet?</target>
+            </trans-unit>
+            <trans-unit id="base_create_account">
+                <source>BASE_CREATE_ACCOUNT</source>
+                <target>Don't have an account yet?</target>
+            </trans-unit>
+            <trans-unit id="base_register_message">
+                <source>BASE_REGISTER_MESSAGE</source>
+                <target>Please fill in below form to create an account with us</target>
+            </trans-unit>
+            <trans-unit id="base_rights_reserved">
+                <source>BASE_RIGHTS_RESERVED</source>
+                <target>All rights reserved</target>
+            </trans-unit>
+            <!-- Login -->
+            <trans-unit id="login_forgot_password">
+                <source>LOGIN_FORGOT_PASSWORD</source>
+                <target>Forgot your password?</target>
+            </trans-unit>
+            <trans-unit id="login_no_account_yet">
+                <source>LOGIN_NO_ACCOUNT_YET</source>
+                <target>Don't have an account yet?</target>
+            </trans-unit>
+            <!-- Users -->
+            <trans-unit id="users_back_to_login">
+                <source>USERS_BACK_TO_LOGIN</source>
+                <target>Back to login</target>
+            </trans-unit>
+            <trans-unit id="users_id">
+                <source>USERS_ID</source>
+                <target>ID</target>
+            </trans-unit>
+            <trans-unit id="users_username">
+                <source>USERS_USERNAME</source>
+                <target>Username</target>
+            </trans-unit>
+            <trans-unit id="users_email">
+                <source>USERS_EMAIL</source>
+                <target>Email</target>
+            </trans-unit>
+            <!-- Songs -->
+            <trans-unit id="song_number">
+                <source>SONG_NUMBER</source>
+                <target>Number</target>
+            </trans-unit>
+            <trans-unit id="song_title">
+                <source>SONG_TITLE</source>
+                <target>Title</target>
+            </trans-unit>
+            <!-- Breadcrumbs -->
+            <trans-unit id="breadcrumb_songs">
+                <source>BREADCRUMB_SONGS</source>
+                <target>Songs</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb_users">
+                <source>BREADCRUMB_USERS</source>
+                <target>Users</target>
+            </trans-unit>
+            <!-- Breadcrumb paths -->
+            <trans-unit id="path_songs_songs">
+                <source>PATH_SONGS_SONGS</source>
+                <target>Songs</target>
+            </trans-unit>
+            <trans-unit id="path_songs_create">
+                <source>PATH_SONGS_CREATE</source>
+                <target>Create</target>
+            </trans-unit>
+            <trans-unit id="path_songs_edit">
+                <source>PATH_SONGS_EDIT</source>
+                <target>Edit</target>
+            </trans-unit>
+            <trans-unit id="path_users_users">
+                <source>PATH_USERS_USERS</source>
+                <target>Users</target>
+            </trans-unit>
+            <trans-unit id="path_users_edit">
+                <source>PATH_USERS_EDIT</source>
+                <target>Edit</target>
+            </trans-unit>
+            <trans-unit id="path_users_create">
+                <source>PATH_USERS_CREATE</source>
+                <target>Create</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
