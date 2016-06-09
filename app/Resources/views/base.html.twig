@@ -165,13 +165,13 @@
                                         {% endif %}
                                     </li>
                                     <li class="c-menu-type-classic">
-                                        <a href="#" class="c-link dropdown-toggle">nl</a>
+                                        <a href="#" class="c-link dropdown-toggle">{{ app.request.locale }}</a>
                                         <ul class="dropdown-menu c-menu-type-classic c-pull-left" role="menu">
-                                            <li>
-                                                <a href="#">English</a>
+                                            <li {% if app.request.locale == 'en' %}class="c-active"{% endif %}>
+                                                <a href="{{ path('language', {'_locale': 'en' }) }}">English</a>
                                             </li>
-                                            <li class="c-active">
-                                                <a href="#">Nederlands</a>
+                                            <li {% if app.request.locale == 'nl' %}class="c-active"{% endif %}>
+                                                <a href="{{ path('language', {'_locale': 'nl' }) }}">Nederlands</a>
                                             </li>
                                     </li>
                                 </ul>

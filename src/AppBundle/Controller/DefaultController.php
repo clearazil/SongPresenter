@@ -14,4 +14,12 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
         ]);
     }
+
+    public function localeAction($_locale, Request $request)
+    {
+        $session = $request->getSession();
+        $lastRoute = $session->get('last_route', ['name' => 'homepage', 'params' => []]);
+        
+        return $this->redirectToRoute($lastRoute['name'], $lastRoute['params']);
+    }
 }

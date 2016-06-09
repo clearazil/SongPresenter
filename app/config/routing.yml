@@ -1,5 +1,7 @@
 my_yaml_i18n_routes:
     resource: "routes/i18n.yml"
     type: be_simple_i18n
-
+homepage:
+    path:   /
+    defaults: { _controller: AppBundle:Default:index }
 

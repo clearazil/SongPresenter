@@ -1,6 +1,8 @@
-homepage:
-    locales:    { en: "/home", nl: "/" }
-    defaults:   { _controller: AppBundle:Default:index }
+language:
+    locales:    { en: "/lang/{_locale}", nl: "/taal/{_locale}" }
+    defaults:   { _controller: AppBundle:Default:locale }
+    requirements:
+        _locale: en|nl
 login:
     locales:    { en: "/login/{view}", nl: "/inloggen/{view}" }
     defaults:   { _controller: AppBundle:Security:login, view: true }
