@@ -80,3 +80,7 @@ knp_paginator:
         pagination: pagination/jango-square.html.twig     
         sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig # sort link template
 be_simple_i18n_routing: ~
+ewz_recaptcha:
+    public_key:  "%captcha_public_key%"
+    private_key: "%captcha_private_key%"
+    locale_key:  "%locale%"

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a6cedbddfdae7984c26aea6e31db2abf",
-    "content-hash": "81bbafc19d5d132311113a048c99dda8",
+    "hash": "f845ce4702962abfed3c0d88d33a3c1f",
+    "content-hash": "b20cc915126c16a01afdd9cef8bf507b",
     "packages": [
         {
             "name": "besimple/i18n-routing-bundle",
@@ -845,6 +845,47 @@
                 "orm"
             ],
             "time": "2016-01-05 21:34:58"
+        },
+        {
+            "name": "excelwebzone/recaptcha-bundle",
+            "version": "v1.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/excelwebzone/EWZRecaptchaBundle.git",
+                "reference": "96905ed9d082bf82a4538956b9d6f05decb16bd5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/excelwebzone/EWZRecaptchaBundle/zipball/96905ed9d082bf82a4538956b9d6f05decb16bd5",
+                "reference": "96905ed9d082bf82a4538956b9d6f05decb16bd5",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/framework-bundle": "~3.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "EWZ\\Bundle\\RecaptchaBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael H. Arieli",
+                    "email": "excelwebzone@gmail.com",
+                    "homepage": "http://excelwebzone.com/"
+                }
+            ],
+            "description": "This bundle provides easy reCAPTCHA form field integration",
+            "homepage": "https://github.com/excelwebzone/EWZRecaptchaBundle",
+            "keywords": [
+                "recaptcha"
+            ],
+            "time": "2016-04-28 18:28:34"
         },
         {
             "name": "incenteev/composer-parameter-handler",
