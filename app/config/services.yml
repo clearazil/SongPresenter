@@ -13,6 +13,12 @@ services:
         class: AppBundle\EventListener\LastRouteListener
         tags:
             - { name: kernel.event_subscriber }
+    app.song_voter:
+        class: AppBundle\Security\SongVoter
+        arguments: ['@security.access.decision_manager']
+        tags:
+            - { name: security.voter }
+        public: false
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]

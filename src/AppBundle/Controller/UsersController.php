@@ -23,6 +23,10 @@ class UsersController extends Controller
 
     public function createAction(Request $request, $register = false)
     {
+        if(!$register) {
+            $this->denyAccessUnlessGranted('ROLE_ADMIN');
+        }
+
         $user = new User();
 
         $action = $register ? $this->generateUrl('users_register') : $this->generateUrl('users_create');
@@ -75,6 +79,8 @@ class UsersController extends Controller
 
     public function editAction($id, Request $request)
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+        
         $em = $this->getDoctrine()->getManager();
 
         $user = $em->getRepository('AppBundle:User')

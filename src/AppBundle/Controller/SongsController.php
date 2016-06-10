@@ -15,6 +15,8 @@ class SongsController extends Controller
 {
     public function indexAction(Request $request)
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_REMEMBERED');
+
         $pagination = null;
 
         $form = $this->createFormBuilder([], ['translation_domain' => 'forms'])
@@ -55,6 +57,8 @@ class SongsController extends Controller
 
     public function createAction(Request $request)
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
         $song = new Song();
 
         $songVerse = new SongVerse();
@@ -84,6 +88,8 @@ class SongsController extends Controller
 
         $song = $em->getRepository('AppBundle:Song')
             ->find($id);
+
+        $this->denyAccessUnlessGranted('EDIT', $song);
 
         $form = $this->createForm(SongType::class, $song);
 

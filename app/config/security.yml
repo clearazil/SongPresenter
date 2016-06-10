@@ -36,10 +36,6 @@ security:
             logout:
                 path: logout
     access_control:
-        - { path: ^/users, roles: ROLE_ADMIN }
-        - { path: ^/songs/create, roles: ROLE_ADMIN }
-        - { path: ^/songs/edit, roles: ROLE_ADMIN }
-
     encoders:
         AppBundle\Entity\User:
             algorithm: bcrypt

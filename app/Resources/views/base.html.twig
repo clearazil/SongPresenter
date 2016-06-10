@@ -88,73 +88,83 @@
                                         <div class="c-menu-type-classic c-menu-type-fullwidth" style="min-width: auto">
                                         </div>
                                     </li>
-                                    <li class="c-menu-type-classic {% if app.request.attributes.get('_route') starts with 'songs' %}c-active{% endif %}">
-                                        <a href="javascript:;" class="c-link dropdown-toggle">{%trans %}BASE_SONGS{% endtrans %}
-                                            <span class="c-arrow c-toggler"></span>
-                                        </a>
-                                        <ul class="dropdown-menu c-menu-type-classic c-pull-left">
-                                            <li class="dropdown-submenu">
-                                                <a href="{{ path('songs_index') }}">{% trans %}BASE_SONGS_OVERVIEW{% endtrans %}
-                                                    <span class="c-arrow c-toggler"></span>
-                                                </a>
-                                            </li>
-                                            <li class="dropdown-submenu">
-                                                <a href="{{ path('songs_create') }}">{% trans %}BASE_SONGS_CREATE{% endtrans %}
-                                                    <span class="c-arrow c-toggler"></span>
-                                                </a>
-                                            </li>
-                                            <li class="dropdown-submenu">
-                                                <a href="javascript:;">{% trans %}BASE_BUNDLES{% endtrans %}
-                                                    <span class="c-arrow c-toggler"></span>
-                                                </a>
-                                                <ul class="dropdown-menu c-pull-right">
-                                                    <li>
-                                                        <a href="#">{% trans %}BASE_BUNDLES_OVERVIEW{% endtrans %}</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">{% trans %}BASE_BUNDLES_CREATE{% endtrans %}</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="c-menu-type-classic">
-                                        <a href="javascript:;" class="c-link dropdown-toggle">{% trans %}BASE_PRESENTATIONS{% endtrans %}
-                                            <span class="c-arrow c-toggler"></span>
-                                        </a>
-                                        <ul class="dropdown-menu c-menu-type-classic c-pull-left">
-                                            <li class="dropdown-submenu">
-                                                <a href="#">{% trans %}BASE_PRESENTATIONS_CREATE{% endtrans %}
-                                                    <span class="c-arrow c-toggler"></span>
-                                                </a>
-                                            </li>
-                                            <li class="dropdown-submenu">
-                                                <a href="#">{% trans %}BASE_PRESENTATIONS_SAVED{% endtrans %}
-                                                    <span class="c-arrow c-toggler"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="c-menu-type-classic {% if app.request.attributes.get('_route') starts with 'users' %}c-active{% endif %}">
-                                        <a href="javascript:;" class="c-link dropdown-toggle">{% trans %}BASE_TOOLS{% endtrans %}
-                                            <span class="c-arrow c-toggler"></span>
-                                        </a>
-                                        <ul class="dropdown-menu c-menu-type-classic c-pull-left">
-                                            <li class="dropdown-submenu">
-                                                <a href="javascript:;">{% trans %}BASE_TOOLS_USERS{% endtrans %}
-                                                    <span class="c-arrow c-toggler"></span>
-                                                </a>
-                                                <ul class="dropdown-menu c-pull-right">
-                                                    <li>
-                                                        <a href="{{ path('users_index') }}">{% trans %}BASE_USERS_OVERVIEW{% endtrans %}</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="{{ path('users_create') }}">{% trans %}BASE_USERS_CREATE{% endtrans %}</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
+                                    
+                                    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                                        <li class="c-menu-type-classic {% if app.request.attributes.get('_route') starts with 'songs' %}c-active{% endif %}">
+                                            <a href="javascript:;" class="c-link dropdown-toggle">{%trans %}BASE_SONGS{% endtrans %}
+                                                <span class="c-arrow c-toggler"></span>
+                                            </a>
+                                            <ul class="dropdown-menu c-menu-type-classic c-pull-left">
+                                                <li class="dropdown-submenu">
+                                                    <a href="{{ path('songs_index') }}">{% trans %}BASE_SONGS_OVERVIEW{% endtrans %}
+                                                        <span class="c-arrow c-toggler"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="dropdown-submenu">
+                                                    <a href="{{ path('songs_create') }}">{% trans %}BASE_SONGS_CREATE{% endtrans %}
+                                                        <span class="c-arrow c-toggler"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="dropdown-submenu">
+                                                    <a href="javascript:;">{% trans %}BASE_BUNDLES{% endtrans %}
+                                                        <span class="c-arrow c-toggler"></span>
+                                                    </a>
+                                                    <ul class="dropdown-menu c-pull-right">
+                                                        <li>
+                                                            <a href="#">{% trans %}BASE_BUNDLES_OVERVIEW{% endtrans %}</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">{% trans %}BASE_BUNDLES_CREATE{% endtrans %}</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                                        <li class="c-menu-type-classic">
+                                            <a href="javascript:;" class="c-link dropdown-toggle">{% trans %}BASE_PRESENTATIONS{% endtrans %}
+                                                <span class="c-arrow c-toggler"></span>
+                                            </a>
+                                            <ul class="dropdown-menu c-menu-type-classic c-pull-left">
+                                                <li class="dropdown-submenu">
+                                                    <a href="#">{% trans %}BASE_PRESENTATIONS_CREATE{% endtrans %}
+                                                        <span class="c-arrow c-toggler"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="dropdown-submenu">
+                                                    <a href="#">{% trans %}BASE_PRESENTATIONS_SAVED{% endtrans %}
+                                                        <span class="c-arrow c-toggler"></span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                        <li class="c-menu-type-classic {% if app.request.attributes.get('_route') starts with 'users' %}c-active{% endif %}">
+                                            <a href="javascript:;" class="c-link dropdown-toggle">{% trans %}BASE_TOOLS{% endtrans %}
+                                                <span class="c-arrow c-toggler"></span>
+                                            </a>
+                                            <ul class="dropdown-menu c-menu-type-classic c-pull-left">
+                                                <li class="dropdown-submenu">
+                                                    <a href="javascript:;">{% trans %}BASE_TOOLS_USERS{% endtrans %}
+                                                        <span class="c-arrow c-toggler"></span>
+                                                    </a>
+                                                    <ul class="dropdown-menu c-pull-right">
+                                                        <li>
+                                                            <a href="{{ path('users_index') }}">{% trans %}BASE_USERS_OVERVIEW{% endtrans %}</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="{{ path('users_create') }}">{% trans %}BASE_USERS_CREATE{% endtrans %}</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    {% endif %}
+
                                     <li>
                                         {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                                             <a href="{{ path('logout') }}" data-toggle="modal" class="c-btn-border-opacity-04 c-btn btn-no-focus c-btn-header btn btn-sm c-btn-border-1x c-btn-white c-btn-circle c-btn-uppercase c-btn-sbold">
