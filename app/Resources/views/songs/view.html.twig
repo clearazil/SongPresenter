@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block breadcrumbs %}
+    <div class="c-layout-breadcrumbs-1 c-fonts-uppercase c-fonts-bold c-bordered c-bordered-both">
+        <div class="container">
+            <div class="c-page-title c-pull-left">
+                <h3 class="c-font-uppercase c-font-sbold">{% trans %}BREADCRUMB_SONGS{% endtrans %}</h3>
+            </div>
+            <ul class="c-page-breadcrumbs c-theme-nav c-pull-right c-fonts-regular">
+                <li>
+                    <a href="{{ path('songs_index') }}">{% trans %}PATH_SONGS_SONGS{% endtrans %}</a>
+                </li>
+                <li>/</li>
+                <li class="c-state_active">
+                    <a href="{{ path('songs_view', {'id': song.id }) }}">{% trans %}PATH_SONGS_VIEW{% endtrans %}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block body %}
+    <div class="col-md-10">
+        <div class="c-content-title-2">
+            <h3 class="c-left c-font-uppercase">{{ song.title }}</h3>
+            <div class="c-line c-theme-bg c-theme-bg-after"></div>
+            <h2></h2>
+        </div>
+        <p>
+            {% if is_granted('EDIT', song) %}
+                <a href="{{ path('songs_edit', {'id': song.id}) }}" class="btn c-theme-btn">
+                    <i class="icon-pencil"></i> {% trans %}SONG_EDIT{% endtrans %}
+                </a>
+            {% endif %}
+        </p>
+        <dl class="dl-horizontal">
+            <dt></dt><dd><h2>{{ song.songGroup.name }} {{ song.songNo }}</h2></dd>
+            <br>
+            {% for verse in song.verses %}
+                {% set i = i + 1 %}
+                <dt>{{ 'SONG_VERSE%no%'|trans({'%no%': i}) }}</dt>
+                <dd class="span12">
+                    {{ verse.verse|nl2br }}
+                    <div class="c-content-divider c-divider-sm c-theme-bg">
+                    </div>
+                    
+                </dd>
+            {% endfor %}
+        </dl>
+    </div>
+
+{% endblock %}

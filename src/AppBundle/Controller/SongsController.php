@@ -55,6 +55,21 @@ class SongsController extends Controller
         ]);
     }
 
+    public function viewAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $song = $em->getRepository('AppBundle:Song')
+            ->find($id);
+
+        $this->denyAccessUnlessGranted('VIEW', $song);
+
+        return $this->render('songs/view.html.twig', [
+            'song' => $song,
+            'i'    => 0,
+        ]);
+    }
+
     public function createAction(Request $request)
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN');

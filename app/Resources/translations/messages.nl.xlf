@@ -134,6 +134,14 @@
                 <source>SONG_TITLE</source>
                 <target>Titel</target>
             </trans-unit>
+            <trans-unit id="song_verse">
+                <source>SONG_VERSE%no%</source>
+                <target>Vers %no%</target>
+            </trans-unit>
+            <trans-unit id="song_edit">
+                <source>SONG_EDIT</source>
+                <target>Wijzigen</target>
+            </trans-unit>
             <!-- Breadcrumbs -->
             <trans-unit id="breadcrumb_songs">
                 <source>BREADCRUMB_SONGS</source>
@@ -147,6 +155,10 @@
             <trans-unit id="path_songs_songs">
                 <source>PATH_SONGS_SONGS</source>
                 <target>Liederen</target>
+            </trans-unit>
+            <trans-unit id="path_songs_view">
+                <source>PATH_SONGS_VIEW</source>
+                <target>Weergave</target>
             </trans-unit>
             <trans-unit id="path_songs_create">
                 <source>PATH_SONGS_CREATE</source>

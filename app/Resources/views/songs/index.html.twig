@@ -34,13 +34,14 @@
                 {% for song in pagination %}
                     <tr>
                         <td>{{ song.songno }}</td>
-                        <td>
-                            {% if is_granted('EDIT', song) %}
-                                <a href="{{ path('songs_edit', {'id': song.id}) }}">{{ song.title }}</a>
-                            {% else %}
-                                {{ song.title }}
-                            {% endif %}
-                        </td>
+                        <td><a href="{{ path('songs_view', {'id': song.id}) }}">{{ song.title }}</a></td>
+                        {% if is_granted('EDIT', song) %}
+                            <td>
+                                <a href="{{ path('songs_edit', {'id': song.id}) }}" class="btn c-theme-btn">
+                                    <i class="icon-pencil"></i> {% trans %}SONG_EDIT{% endtrans %}
+                                </a>
+                            </td>
+                        {% endif %}
                     </tr>
                 {% endfor %}
             </tbody>

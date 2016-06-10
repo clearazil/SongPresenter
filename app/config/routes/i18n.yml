@@ -23,6 +23,9 @@ users_edit:
 songs_index:
     locales:    { en: "/songs", nl: "/liederen" }
     defaults:   { _controller: AppBundle:Songs:index }
+songs_view:
+    locales:    { en: "/songs/{id}", nl: "/liederen/{id}" }
+    defaults:   { _controller: AppBundle:Songs:view }
 songs_create:
     locales:    { en: "/songs/create", nl: "/liederen/nieuw" }
     defaults:   { _controller: AppBundle:Songs:create }
