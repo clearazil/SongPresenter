@@ -19,6 +19,8 @@ class DefaultController extends Controller
     {
         $session = $request->getSession();
         $lastRoute = $session->get('last_route', ['name' => 'homepage', 'params' => []]);
+
+        unset($lastRoute['params']['_locale']);
         
         return $this->redirectToRoute($lastRoute['name'], $lastRoute['params']);
     }
