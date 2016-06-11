@@ -80,3 +80,8 @@ footer{
 textarea.textarea-verse {
   height: 150px;
 }
+
+/* Remove gap between menu and submenu */
+.dropdown-submenu > .dropdown-menu{
+  margin-left:0;
+}
