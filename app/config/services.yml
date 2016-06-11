@@ -19,6 +19,11 @@ services:
         tags:
             - { name: security.voter }
         public: false
+    app.song_bundle_voter:
+        class: AppBundle\Security\SongBundleVoter
+        arguments: ['@security.access.decision_manager']
+        tags:
+            - { name: security.voter }
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]

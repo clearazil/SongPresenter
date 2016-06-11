@@ -15,6 +15,10 @@
                 <li>
                     <a href="{{ path('song_bundles_index') }}">{% trans %}PATH_SONG_BUNDLES_INDEX{% endtrans %}</a>
                 </li>
+                <li>/</li>
+                <li>
+                    <a href="{{ path('song_bundles_create') }}">{% trans %}PATH_SONG_BUNDLES_CREATE{% endtrans %}</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -22,26 +26,10 @@
 {% endblock %}
 
 {% block body %}
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <td>{% trans %}SONG_BUNDLE_ABBR{% endtrans %}</td><td>{% trans %}SONG_BUNDLE_NAME{% endtrans %}</td>
-            </tr>
-        </thead>
-        <tbody>
-            {% for bundle in bundles %}
-                <tr>
-                    <td>{{ bundle.abbreviation }}</td>
-                    <td>{{ bundle.name }}</td>
-                    {% if is_granted('EDIT', bundle) %}
-                        <td>
-                            <a href="{{ path('song_bundles_edit', {'id': bundle.id }) }}" class="btn c-theme-btn">
-                                <i class="icon-pencil"></i> {% trans %}SONG_BUNDLE_EDIT{% endtrans %}
-                            </a>
-                        </td>
-                    {% endif %}
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    {{ form_errors(form) }}
+    {{ form_row(form.abbreviation) }}
+    {{ form_row(form.name) }}
+    {{ form_row(form.submit) }}
+    {{ form_end(form) }}
 {% endblock %}

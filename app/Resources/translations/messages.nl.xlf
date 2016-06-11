@@ -189,6 +189,14 @@
                 <source>PATH_SONG_BUNDLES_INDEX</source>
                 <target>Bundels</target>
             </trans-unit>
+            <trans-unit id="path_song_bundles_create">
+                <source>PATH_SONG_BUNDLES_CREATE</source>
+                <target>Nieuw</target>
+            </trans-unit>
+            <trans-unit id="path_song_bundles_edit">
+                <source>PATH_SONG_BUNDLES_EDIT</source>
+                <target>Wijzigen</target>
+            </trans-unit>
             <trans-unit id="path_users_users">
                 <source>PATH_USERS_USERS</source>
                 <target>Gebruikers</target>

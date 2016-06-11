@@ -4,9 +4,11 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity
+ * @UniqueEntity({"name"})
  * @ORM\HasLifecycleCallbacks()
  * @ORM\Table(name="song_groups")
  */
@@ -21,12 +23,14 @@ class SongGroup
     private $id;
 
     /**
+     * @Assert\NotBlank()
      * @ORM\Column(type="string")
      * @var [type]
      */
     private $abbreviation;
 
     /**
+     * @Assert\NotBlank()
      * @ORM\Column(type="string")
      * @var [type]
      */

@@ -55,6 +55,14 @@
                 <source>LABEL_SONG_VERSE_VERSE%no%</source>
                 <target>Verse %no%</target>
             </trans-unit>
+            <trans-unit id="label_song_bundle_abbr">
+                <source>LABEL_SONG_BUNDLE_ABBR</source>
+                <target>Abbreviation</target>
+            </trans-unit>
+            <trans-unit id="label_song_bundle_name">
+                <source>LABEL_SONG_BUNDLE_NAME</source>
+                <target>Name</target>
+            </trans-unit>
             <!-- Buttons -->
             <trans-unit id="button_login_login">
                 <source>BUTTON_LOGIN_LOGIN</source>
@@ -98,6 +106,14 @@
             </trans-unit>
             <trans-unit id="button_song_edit">
                 <source>BUTTON_SONG_EDIT</source>
+                <target>Update</target>
+            </trans-unit>
+            <trans-unit id="button_song_bundle_create">
+                <source>BUTTON_SONG_BUNDLE_CREATE</source>
+                <target>Create</target>
+            </trans-unit>
+            <trans-unit id="button_song_bundle_edit">
+                <source>BUTTON_SONG_BUNDLE_EDIT</source>
                 <target>Update</target>
             </trans-unit>
         </body>

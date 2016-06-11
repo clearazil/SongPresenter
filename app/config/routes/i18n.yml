@@ -23,6 +23,12 @@ users_edit:
 song_bundles_index:
     locales:    { en: "/songs/bundles", nl: "/liederen/bundels" }
     defaults:   { _controller: AppBundle:SongBundles:index }
+song_bundles_create:
+    locales:    { en: "/songs/bundles/create", nl: "/liederen/bundels/nieuw" }
+    defaults:   { _controller: AppBundle:SongBundles:create }
+song_bundles_edit:
+    locales:    { en: "/songs/bundles/edit/{id}", nl: "/liederen/bundels/wijzigen/{id}" }
+    defaults:   { _controller: AppBundle:SongBundles:edit }
 songs_index:
     locales:    { en: "/songs", nl: "/liederen" }
     defaults:   { _controller: AppBundle:Songs:index }
