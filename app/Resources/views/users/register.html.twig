@@ -1,4 +1,5 @@
-{{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+{% form_theme form 'form/captcha_layout.html.twig' %}
+{{ form_start(form, {'attr': {'class': 'form-horizontal', 'novalidate': 'novalidate'}}) }}
 {{ form_errors(form) }}
 <div class="form-group">
     {{ form_widget(form.username, {'attr': {'placeholder': form.username.vars.label, 'class': 'form-control input-lg c-square'}}) }}
@@ -12,6 +13,7 @@
 <div class="form-group">
     {{ form_widget(form.password.second, {'attr': {'placeholder': form.password.second.vars.label, 'class': 'form-control input-lg c-square'}}) }}
 </div>
+    {{ form_widget(form.recaptcha) }}
 <div class="form-group">
     {{ form_widget(form.create, {'label': 'BUTTON_USER_REGISTER', 'attr': {'class': 'c-theme-btn btn-md c-btn-login'}}) }}
     <a href="javascript:;" class="c-btn-forgot" data-toggle="modal" data-target="#login-form" data-dismiss="modal">{% trans %}USERS_BACK_TO_LOGIN{% endtrans %}</a>

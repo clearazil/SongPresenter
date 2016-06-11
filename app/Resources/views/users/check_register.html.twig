@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'class': 'form-horizontal'}}) }}
+    {{ form_errors(form) }}
+    {{ form_row(form.username) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.password) }}
+    <div class="form-group {% if not form.recaptcha.vars.valid %} has-error{% endif %}">
+        <div class="col-md-4"></div>
+        <div class="col-md-6">
+            {{ form_widget(form.recaptcha) }}
+            {{ form_errors(form.recaptcha) }}
+        </div>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

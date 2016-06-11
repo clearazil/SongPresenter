@@ -9,6 +9,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use EWZ\Bundle\RecaptchaBundle\Form\Type\EWZRecaptchaType;
+use EWZ\Bundle\RecaptchaBundle\Validator\Constraints\IsTrue as RecaptchaTrue;
 
 class UserType extends AbstractType
 {
@@ -25,6 +27,15 @@ class UserType extends AbstractType
             ->add('email', TextType::class, ['label' => 'LABEL_USER_EMAIL'])
             ->add('create', SubmitType::class, ['label' => 'BUTTON_USER_CREATE'])
         ;
+
+        if($options['register']) {
+            $builder->add('recaptcha', EWZRecaptchaType::class, [
+                'mapped'        => false,
+                'constraints'   => [
+                    new RecaptchaTrue()
+                ],
+            ]);
+        }
     }
 
     public function configureOptions(OptionsResolver $resolver)
@@ -32,6 +43,7 @@ class UserType extends AbstractType
         $resolver->setDefaults([
             'data_class' => 'AppBundle\Entity\User',
             'translation_domain' => 'forms',
+            'register'              => true,
         ]);
     }
 }

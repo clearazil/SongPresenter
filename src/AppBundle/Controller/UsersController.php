@@ -31,7 +31,7 @@ class UsersController extends Controller
 
         $action = $register ? $this->generateUrl('users_register') : $this->generateUrl('users_create');
 
-        $form = $this->createForm(UserType::class, $user, ['action' => $action]);
+        $form = $this->createForm(UserType::class, $user, ['action' => $action, 'register' => $register]);
 
         $form->handleRequest($request);
 
@@ -75,6 +75,10 @@ class UsersController extends Controller
 
             return $this->redirectToRoute('homepage');
         }
+
+        return $this->render('users/check_register.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 
     public function editAction($id, Request $request)
