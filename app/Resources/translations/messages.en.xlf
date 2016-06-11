@@ -142,10 +142,27 @@
                 <source>SONG_EDIT</source>
                 <target>Edit</target>
             </trans-unit>
+            <!-- Song Bundles -->
+            <trans-unit id="song_bundle_abbr">
+                <source>SONG_BUNDLE_ABBR</source>
+                <target>Abbreviation</target>
+            </trans-unit>
+            <trans-unit id="song_bundle_name">
+                <source>SONG_BUNDLE_NAME</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="song_bundle_edit">
+                <source>SONG_BUNDLE_EDIT</source>
+                <target>Edit</target>
+            </trans-unit>   
             <!-- Breadcrumbs -->
             <trans-unit id="breadcrumb_songs">
                 <source>BREADCRUMB_SONGS</source>
                 <target>Songs</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb_song_bundles">
+                <source>BREADCRUMB_SONG_BUNDLES</source>
+                <target>Bundles</target>
             </trans-unit>
             <trans-unit id="breadcrumb_users">
                 <source>BREADCRUMB_USERS</source>
@@ -167,6 +184,10 @@
             <trans-unit id="path_songs_edit">
                 <source>PATH_SONGS_EDIT</source>
                 <target>Edit</target>
+            </trans-unit>
+            <trans-unit id="path_song_bundles_index">
+                <source>PATH_SONG_BUNDLES_INDEX</source>
+                <target>Bundles</target>
             </trans-unit>
             <trans-unit id="path_users_users">
                 <source>PATH_USERS_USERS</source>

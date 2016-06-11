@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block breadcrumbs %}
+
+    <div class="c-layout-breadcrumbs-1 c-fonts-uppercase c-fonts-bold c-bordered c-bordered-both">
+        <div class="container">
+            <div class="c-page-title c-pull-left">
+                <h3 class="c-font-uppercase c-font-sbold">{% trans %}BREADCRUMB_SONG_BUNDLES{% endtrans %}</h3>
+            </div>
+            <ul class="c-page-breadcrumbs c-theme-nav c-pull-right c-fonts-regular">
+                <li>
+                    <a href="{{ path('songs_index') }}">{% trans %}PATH_SONGS_SONGS{% endtrans %}</a>
+                </li>
+                <li>/</li>
+                <li>
+                    <a href="{{ path('song_bundles_index') }}">{% trans %}PATH_SONG_BUNDLES_INDEX{% endtrans %}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block body %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>{% trans %}SONG_BUNDLE_ABBR{% endtrans %}</td><td>{% trans %}SONG_BUNDLE_NAME{% endtrans %}</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for bundle in bundles %}
+                <tr>
+                    <td>{{ bundle.abbreviation }}</td>
+                    <td>{{ bundle.name }}</td>
+                    {% if not is_granted('EDIT', bundle) %}
+                        <td>
+                            <a href="#" class="btn c-theme-btn">
+                                <i class="icon-pencil"></i> {% trans %}SONG_BUNDLE_EDIT{% endtrans %}
+                            </a>
+                        </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

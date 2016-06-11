@@ -20,15 +20,18 @@ users_create:
 users_edit:
     locales:    { en: "/users/edit/{id}", nl: "/gebruikers/wijzigen/{id}" }
     defaults:   { _controller: AppBundle:Users:edit }
+song_bundles_index:
+    locales:    { en: "/songs/bundles", nl: "/liederen/bundels" }
+    defaults:   { _controller: AppBundle:SongBundles:index }
 songs_index:
     locales:    { en: "/songs", nl: "/liederen" }
     defaults:   { _controller: AppBundle:Songs:index }
-songs_view:
-    locales:    { en: "/songs/{id}", nl: "/liederen/{id}" }
-    defaults:   { _controller: AppBundle:Songs:view }
 songs_create:
     locales:    { en: "/songs/create", nl: "/liederen/nieuw" }
     defaults:   { _controller: AppBundle:Songs:create }
 songs_edit:
     locales:    { en: "/songs/edit/{id}", nl: "/liederen/wijzigen/{id}" }
     defaults:   { _controller: AppBundle:Songs:edit }
+songs_view:
+    locales:    { en: "/songs/{id}", nl: "/liederen/{id}" }
+    defaults:   { _controller: AppBundle:Songs:view }
