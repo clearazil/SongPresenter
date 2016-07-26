@@ -24,6 +24,11 @@ services:
         arguments: ['@security.access.decision_manager']
         tags:
             - { name: security.voter }
+    validator.unique.email_exists:
+        class: AppBundle\Validator\Constraints\EmailExistsValidator
+        arguments: ['@doctrine.orm.entity_manager']
+        tags:
+            - { name: validator.constraint_validator }
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]

@@ -108,6 +108,11 @@
                 <source>LOGIN_NO_ACCOUNT_YET</source>
                 <target>Don't have an account yet?</target>
             </trans-unit>
+            <!-- Password -->
+            <trans-unit id="password_email_sent">
+                <source>PASSWORD_EMAIL_SENT</source>
+                <target>An email has been sent with a link to recover your password.</target>
+            </trans-unit>
             <!-- Users -->
             <trans-unit id="users_back_to_login">
                 <source>USERS_BACK_TO_LOGIN</source>
@@ -124,6 +129,14 @@
             <trans-unit id="users_email">
                 <source>USERS_EMAIL</source>
                 <target>Email</target>
+            </trans-unit>
+            <trans-unit id="users_message_change_password">
+                <source>USERS_MESSAGE_CHANGE_PASSWORD</source>
+                <target>Enter your new password here.</target>
+            </trans-unit>
+            <trans-unit id="users_message_change_password_success">
+                <source>USERS_MESSAGE_CHANGE_PASSWORD_SUCCESS</source>
+                <target>Password changed successfully.</target>
             </trans-unit>
             <!-- Songs -->
             <trans-unit id="song_number">

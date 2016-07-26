@@ -8,6 +8,12 @@ login:
     defaults:   { _controller: AppBundle:Security:login, view: true }
 logout:
     locales:    { en: "/logout", nl: "/uitloggen" }
+security_password_recovery:
+    locales:    { en: "/recover_password", nl: "wachtwoord_vergeten" }
+    defaults:   { _controller: AppBundle:Security:recoverPassword }
+security_change_password:
+    locales:    { en: "/recover_password/{recoverId}", nl: "/wachtwoord_vergeten/{recoverId}" }
+    defaults:   { _controller: AppBundle:Security:changePassword }
 users_index:
     locales:    { en: "/users", nl: "/gebruikers" }
     defaults:   { _controller: AppBundle:Users:index }

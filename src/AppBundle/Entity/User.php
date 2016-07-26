@@ -45,6 +45,12 @@ class User implements UserInterface, EquatableInterface, \Serializable
     private $email;
 
     /**
+     * @ORM\Column(name="recover_password_id", type="string", nullable=true)
+     * @var [type]
+     */
+    private $recoverPasswordId;
+
+    /**
      * @ORM\Column(type="string")
      * @var [type]
      */
@@ -307,5 +313,29 @@ class User implements UserInterface, EquatableInterface, \Serializable
     public function getIsActive()
     {
         return $this->is_active;
+    }
+
+    /**
+     * Set recoverPasswordId
+     *
+     * @param string $recoverPasswordId
+     *
+     * @return User
+     */
+    public function setRecoverPasswordId($recoverPasswordId)
+    {
+        $this->recoverPasswordId = $recoverPasswordId;
+
+        return $this;
+    }
+
+    /**
+     * Get recoverPasswordId
+     *
+     * @return string
+     */
+    public function getRecoverPasswordId()
+    {
+        return $this->recover_password_id;
     }
 }

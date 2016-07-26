@@ -2,6 +2,9 @@
 {% block body %}
 
 <div class="col-md-8">
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
     <!-- BEGIN: CONTENT/USER/LOGIN-FORM -->
         {% form_theme login 'form/bootstrap_3_jango_horizontal_layout.html.twig' %}
         {{ form_start(login, {'attr': {'novalidate': 'novalidate'}}) }}
