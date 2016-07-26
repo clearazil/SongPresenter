@@ -138,6 +138,14 @@
                 <source>USERS_MESSAGE_CHANGE_PASSWORD_SUCCESS</source>
                 <target>Password changed successfully.</target>
             </trans-unit>
+            <trans-unit id="users_recover_password_email_subject">
+                <source>USERS_RECOVER_PASSWORD_EMAIL_SUBJECT</source>
+                <target>Change password</target>
+            </trans-unit>
+            <trans-unit id="users_recover_password_email_change_password_message">
+                <source>USERS_RECOVER_PASSWORD_EMAIL_CHANGE_PASSWORD_MESSAGE</source>
+                <target>Click <![CDATA[<a href="%reset_url%">here</a>]]> to change your password.</target>
+            </trans-unit>
             <!-- Songs -->
             <trans-unit id="song_number">
                 <source>SONG_NUMBER</source>

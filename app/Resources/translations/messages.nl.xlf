@@ -138,6 +138,14 @@
                 <source>USERS_MESSAGE_CHANGE_PASSWORD_SUCCESS</source>
                 <target>Wachtwoord succesvol gewijzigd.</target>
             </trans-unit>
+            <trans-unit id="users_recover_password_email_subject">
+                <source>USERS_RECOVER_PASSWORD_EMAIL_SUBJECT</source>
+                <target>Wachtwoord wijzigen</target>
+            </trans-unit>
+            <trans-unit id="users_recover_password_email_change_password_message">
+                <source>USERS_RECOVER_PASSWORD_EMAIL_CHANGE_PASSWORD_MESSAGE</source>
+                <target>Klik <![CDATA[<a href="%reset_url%">hier</a>]]> om je wachtwoord te wijzigen.</target>
+            </trans-unit>
             <!-- Songs -->
             <trans-unit id="song_number">
                 <source>SONG_NUMBER</source>

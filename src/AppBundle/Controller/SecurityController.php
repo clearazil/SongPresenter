@@ -75,9 +75,20 @@ class SecurityController extends Controller
             $em->persist($user);
             $em->flush();
 
-            // TO DO:
-            // send email
+            $message = \Swift_Message::newInstance()
+                ->setSubject($this->get('translator')->trans('USERS_RECOVER_PASSWORD_EMAIL_SUBJECT'))
+                ->setFrom('admin@derkvanderheide.nl')
+                ->setTo($user->getEmail())
+                ->setBody(
+                    $this->renderView(
+                        'security/emails/recover_password.html.twig',
+                        ['recoverId' => $user->getRecoverPasswordId()]
+                    ),
+                    'text/html'
+                )
+            ;
 
+            $this->get('mailer')->send($message);
         }
 
         if ($standardView) {

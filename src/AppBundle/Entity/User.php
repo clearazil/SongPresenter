@@ -336,6 +336,6 @@ class User implements UserInterface, EquatableInterface, \Serializable
      */
     public function getRecoverPasswordId()
     {
-        return $this->recover_password_id;
+        return $this->recoverPasswordId;
     }
 }
