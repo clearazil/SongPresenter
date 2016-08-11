@@ -87,7 +87,7 @@ class LoadSongVerseData extends AbstractFixture implements OrderedFixtureInterfa
                                 'song_no'       => $previousSongNo,
                         ]);
 
-                        if(!is_null($song)) {
+                        if(!is_null($song) && is_numeric($previousVerseNo)) {
                             $verse->setVerseNo($previousVerseNo);
                             $verse->setVerse($verseData);
                             $verse->setSong($song);
